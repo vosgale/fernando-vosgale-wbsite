@@ -17,8 +17,9 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 100);
   }, []);
+   
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyles />
@@ -31,7 +32,7 @@ function App() {
           <Introduction />
           <GeneralInfosContainer>
             <Aboutme />
-            {/* <Experience /> */}
+            <Experience />
           </GeneralInfosContainer>
         </MainContainer>
       )}

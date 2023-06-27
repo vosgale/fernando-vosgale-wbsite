@@ -4,14 +4,30 @@ import { motion } from "framer-motion";
 import { Text } from "../../styles/global-styles";
 export const Introduction = () => {
   const titleMotionConfig = {
-    initial: {
+    initialh1: {
       opacity: 0,
-      top: "-20px",
+      right: "-20px",
     },
-    animate: {
+
+    animateh1: {
       opacity: 1,
-      top: 0,
+      right: "0px",
     },
+
+    initialh2: {
+      opacity: 0,
+      left: "-20px",
+    },
+    animateh2: {
+      opacity: 1,
+      left: "0px",
+    },
+  };
+  const handleClickScroll = () => {
+    const element = document.getElementById("section-1");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
   return (
     <AboutContainer>
@@ -31,10 +47,10 @@ export const Introduction = () => {
       <TitleContainer>
         <motion.h1
           variants={titleMotionConfig}
-          initial="initial"
-          animate="animate"
+          initial="initialh1"
+          animate="animateh1"
           transition={{
-            delay: 1,
+            delay: 0.8,
             duration: 2,
             type: "tween",
           }}
@@ -44,10 +60,10 @@ export const Introduction = () => {
         </motion.h1>
         <motion.h2
           variants={titleMotionConfig}
-          initial="initial"
-          animate="animate"
+          initial="initialh2"
+          animate="animateh2"
           transition={{
-            delay: 1.5,
+            delay: 0.8,
             duration: 2,
             type: "tween",
           }}
@@ -59,8 +75,8 @@ export const Introduction = () => {
           initial={{ opacity: 0, right: "-100px" }}
           animate={{ opacity: 1, right: 0 }}
           transition={{
-            delay: 1.8,
-            duration: 1.5,
+            delay: 1.3,
+            duration: 1.8,
             type: "tween",
           }}
         >
@@ -72,8 +88,9 @@ export const Introduction = () => {
       <DownButton
         initial={{ opacity: 0, bottom: "50px" }}
         animate={{ opacity: 1, bottom: "30px" }}
+        onClick={() => handleClickScroll()}
         transition={{
-          delay: 1.8,
+          delay: 1.2,
           duration: 1,
         }}
       >

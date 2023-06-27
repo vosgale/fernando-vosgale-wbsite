@@ -23,7 +23,7 @@ export const Aboutme = () => {
     },
   };
   return (
-    <AboutMeContainer>
+    <AboutMeContainer id="section-1">
       <Title number={1} text="Sobre" />
       <ContentContainer>
         <AboutText

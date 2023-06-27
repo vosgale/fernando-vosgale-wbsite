@@ -13,6 +13,7 @@ export const AboutMeContainer = styled.div`
   overflow: hidden;
   @media (max-width: 900px) {
     height: auto;
+    margin-bottom: 60px;
   }
 `;
 

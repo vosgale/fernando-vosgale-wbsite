@@ -75,21 +75,10 @@ export const TitleContainer = styled.div`
     align-items: center;
     gap: 10px;
     position: relative;
-    &::before {
-      content: "";
-      display: block;
-      width: 270px;
-      height: 1px;
-      background-image: linear-gradient(90deg, white, transparent);
-      opacity: 0.7;
-    }
     @media (max-width: 800px) {
       margin-top: 30px;
       align-self: flex-start;
       text-align: start;
-      &::before {
-        display: none;
-      }
     }
   }
 `;
@@ -107,7 +96,7 @@ export const DownButton = styled(motion.button)`
   border: thin solid white;
   height: 38px;
   width: 40px;
-  transition: 0.5s ease;
+  transition: 0.5s;
   img {
     width: 18px;
     height: unset !important;

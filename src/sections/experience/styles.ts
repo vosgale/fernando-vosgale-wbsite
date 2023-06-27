@@ -8,13 +8,55 @@ export const ExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 800px) {
+    min-height: 100vh;
+    height: auto;
+    margin-bottom: 60px;
+  }
+`;
+export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+`;
+export const ButtonsContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 15px 0;
+`;
+export const ButtonOption = styled.div<{ active?: boolean }>`
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: ${(props) => (props.active ? "#393939" : "transparent")};
+  padding: ${(props) => (props.active ? "10px 20px" : "10px 5px")};
+  color: ${(props) => props.theme.colors.primary};
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 100;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.5s ease;
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
+  &:hover {
+    background-color: #393939;
+  }
 `;
 
-export const ContentContainer = styled.div`
+export const InfosContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  margin-top: 65px;
   align-items: center;
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -26,6 +68,7 @@ export const TextContainer = styled.div`
     line-height: 33px;
   }
 `;
+
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -34,28 +77,11 @@ export const ImageContainer = styled.div`
   img {
     width: 80%;
   }
-`;
-
-export const ButtonsContainer = styled.div<{ active?: boolean }>`
-  display: flex;
-  gap: 30px;
-`;
-export const ButtonOption = styled.div<{ active?: boolean }>`
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  background: ${(props) => (props.active ? "#393939" : "transparent")};
-  padding: ${(props) => (props.active ? "10px 20px" : "10px 0")};
-  color: ${(props) => props.theme.colors.primary};
-  border: none;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  font-weight: 100;
-  cursor: pointer;
-  transition: 0.5s ease;
-  &:hover {
-    background-color: #393939;
-    padding: 10px 20px;
+  @media (max-width: 800px) {
+    justify-content: center;
+    img {
+      width: 70%;
+    }
   }
 `;
 

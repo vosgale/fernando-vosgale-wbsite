@@ -1,5 +1,5 @@
 import Title from "../../Components/Title";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ButtonOption,
   ButtonsContainer,
@@ -7,6 +7,7 @@ import {
   ExperienceContainer,
   ExperienceDateContainer,
   ImageContainer,
+  InfosContainer,
   TextContainer,
 } from "./styles";
 import { motion, useAnimation } from "framer-motion";
@@ -57,46 +58,62 @@ export const Experience = () => {
     });
   }, [active, controls]);
 
+  const handleClickScroll = (activeIndex: number) => {
+    setActive(activeIndex);
+    const element = document.getElementById("scrol");
+
+    if (element && activeIndex !== 2) {
+      element.scrollTo({
+        left: activeIndex < 1 ? 0 : element.scrollWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <ExperienceContainer>
       <Title number={2} text="EXPERIÊNCIA" />
       <ContentContainer>
-        <TextContainer>
-          <ButtonsContainer>
-            {experienceOptions.map((item, index) => (
-              <ButtonOption
-                onClick={() => setActive(index)}
-                active={index === active}
-              >
-                {item.name}
-              </ButtonOption>
-            ))}
-          </ButtonsContainer>
-          <Text
-            animate={controls}
-            transition={{ duration: 1.2 }}
-            className="description"
-          >
-            {experienceOptions[active].description}
-          </Text>
-          <ExperienceDateContainer
-            animate={controls}
-            transition={{ duration: 1.1, delay: 0.2 }}
-          >
-            <img src={IMAGES.calendar}></img>
-            <Text>
-              <b>{experienceOptions[active].duration?.start} - </b>
-              {experienceOptions[active].duration?.end}
+        <ButtonsContainer id="scrol">
+          {experienceOptions.map((item, index) => (
+            <ButtonOption
+              onClick={() => handleClickScroll(index)}
+              active={index === active}
+              id={String(active)}
+            >
+              {item.name}
+            </ButtonOption>
+          ))}
+        </ButtonsContainer>
+
+        <InfosContainer>
+          <TextContainer>
+            <Text
+              animate={controls}
+              transition={{ duration: 1.2 }}
+              className="description"
+            >
+              {experienceOptions[active].description}
             </Text>
-          </ExperienceDateContainer>
-        </TextContainer>
-        <ImageContainer>
-          <motion.img
-            animate={controls}
-            transition={{ delay: 0.3, duration: 1.2 }}
-            src={experienceOptions[active].logo}
-          ></motion.img>
-        </ImageContainer>
+            <ExperienceDateContainer
+              animate={controls}
+              transition={{ duration: 1.1, delay: 0.2 }}
+            >
+              <img src={IMAGES.calendar}></img>
+              <Text>
+                <b>{experienceOptions[active].duration?.start} - </b>
+                {experienceOptions[active].duration?.end}
+              </Text>
+            </ExperienceDateContainer>
+          </TextContainer>
+          <ImageContainer>
+            <motion.img
+              animate={controls}
+              transition={{ delay: 0.3, duration: 1.2 }}
+              src={experienceOptions[active].logo}
+            ></motion.img>
+          </ImageContainer>
+        </InfosContainer>
       </ContentContainer>
     </ExperienceContainer>
   );
