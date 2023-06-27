@@ -12,7 +12,7 @@ export const TopbarContainer = styled.div`
   img {
     width: 50px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     padding: 0 30px;
     img {
       width: 40px;
@@ -46,7 +46,7 @@ export const MobileMenu = styled.div`
   }
   display: flex;
   .menu-container {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     background: rgb(0 0 0 / 39%);

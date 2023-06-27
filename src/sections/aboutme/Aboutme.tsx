@@ -19,7 +19,7 @@ export const Aboutme = () => {
     },
     ImageInView: {
       opacity: 0.8,
-      transition: { duration: 1.5, delay: 1 },
+      transition: { duration: 1.5, delay: 0.7 },
     },
   };
   return (

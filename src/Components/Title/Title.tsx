@@ -7,9 +7,9 @@ interface TitleProps {
 export const Title = ({ number, text }: TitleProps) => {
   return (
     <Styledh2
-      initial={{ opacity: 0, left: "-1000px", letterSpacing: "100px" }}
+      initial={{ opacity: 0, left: "-100px" }}
       viewport={{ once: true }}
-      whileInView={{ opacity: 1, left: "0", letterSpacing: "15px" }}
+      whileInView={{ opacity: 1, left: "0" }}
       transition={{ duration: 1 }}
     >
       <span>{number}.</span>

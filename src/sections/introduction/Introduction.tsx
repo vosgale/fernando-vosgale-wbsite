@@ -6,9 +6,11 @@ export const Introduction = () => {
   const titleMotionConfig = {
     initial: {
       opacity: 0,
+      top: "-20px",
     },
     animate: {
       opacity: 1,
+      top: 0,
     },
   };
   return (
@@ -33,7 +35,7 @@ export const Introduction = () => {
           animate="animate"
           transition={{
             delay: 1,
-            duration: 4,
+            duration: 2,
             type: "tween",
           }}
         >
@@ -46,19 +48,37 @@ export const Introduction = () => {
           animate="animate"
           transition={{
             delay: 1.5,
-            duration: 4,
+            duration: 2,
             type: "tween",
           }}
         >
           Vosgale
         </motion.h2>
 
-        <Text>
+        <Text
+          initial={{ opacity: 0, right: "-100px" }}
+          animate={{ opacity: 1, right: 0 }}
+          transition={{
+            delay: 1.8,
+            duration: 1.5,
+            type: "tween",
+          }}
+        >
           Desenvolvedor de software especializado em criar (e projetar)
           experiências digitais únicas e autênticas!
         </Text>
       </TitleContainer>
-      <DownButton><img src={IMAGES.downArrow}></img></DownButton>
+
+      <DownButton
+        initial={{ opacity: 0, bottom: "50px" }}
+        animate={{ opacity: 1, bottom: "30px" }}
+        transition={{
+          delay: 1.8,
+          duration: 1,
+        }}
+      >
+        <img src={IMAGES.downArrow}></img>
+      </DownButton>
     </AboutContainer>
   );
 };

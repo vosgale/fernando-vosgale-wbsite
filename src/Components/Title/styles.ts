@@ -8,15 +8,16 @@ export const Styledh2 = styled(motion.h2)`
   span {
     color: ${(props) => props.theme.colors.primary};
   }
-  letter-spacing: 15px;
+  letter-spacing: 10px;
   display: flex;
   align-items: center;
   position: relative;
-  &::after{
+  margin-bottom: 30px;
+  &::after {
     content: "";
     display: block;
     width: clamp(100px, 27vw, 400px);
-    background-color:  ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primary};
     height: 1px;
     background-image: linear-gradient(45deg, black, transparent);
   }

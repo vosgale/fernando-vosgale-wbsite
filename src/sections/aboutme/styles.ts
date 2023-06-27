@@ -11,7 +11,7 @@ export const AboutMeContainer = styled.div`
   align-items: baseline;
   flex-direction: column;
   overflow: hidden;
-  @media (max-width: 500px) {
+  @media (max-width: 900px) {
     height: auto;
   }
 `;
@@ -19,14 +19,12 @@ export const AboutMeContainer = styled.div`
 export const ContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     flex-direction: column;
-    width: 100%;
   }
 `;
 
 export const AboutText = styled(motion.div)`
-  padding-top: 65px;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -42,20 +40,20 @@ export const AboutText = styled(motion.div)`
       gap: 20px;
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     width: 100%;
   }
 `;
 
 export const ProfileImage = styled(motion.img)`
-  width: 380px;
-  height: 380px;
+  width: clamp(300px, 30vw, 380px);
+  height: clamp(300px, 30vw, 380px);
   object-fit: cover;
   align-self: center;
   border-radius: 50%;
   @media (max-width: 500px) {
-    width: 250px;
-    height: 250px;
+    width: 60vw;
+    height: 60vw;
     margin-top: 50px;
   }
 `;

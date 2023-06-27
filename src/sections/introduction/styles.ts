@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const AboutContainer = styled.div`
@@ -7,11 +8,9 @@ export const AboutContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   flex-direction: column;
   img {
     width: 100%;
-    position: relative;
   }
   @media (max-width: 800px) {
     img {
@@ -25,10 +24,12 @@ export const TitleContainer = styled.div`
   gap: 30px;
   width: 60%;
   z-index: 30;
+  overflow: hidden;
   display: flex;
   position: absolute;
   flex-direction: column;
-  @media (max-width: 800px) {
+
+  @media (max-width: 600px) {
     width: 100%;
     text-align: start;
     padding: 0 30px;
@@ -37,12 +38,14 @@ export const TitleContainer = styled.div`
   h1,
   h2 {
     text-transform: uppercase;
-    font-size: clamp(35.5px, 4.5vw, 76px);
+    font-size: clamp(45.5px, 4.5vw, 76px);
     letter-spacing: clamp(14.5px, 1.5vw, 37.5px);
     font-weight: 400;
     width: 100%;
+    position: relative;
+
     @media (max-width: 350px) {
-      font-size: 30px;
+      font-size: 28px;
     }
   }
   h1 {
@@ -57,7 +60,7 @@ export const TitleContainer = styled.div`
   h2 {
     color: ${(props) => props.theme.colors.secondary};
     text-align: end;
-    @media (max-width: 800px) {
+    @media (max-width: 350px) {
       text-align: start;
     }
   }
@@ -71,6 +74,7 @@ export const TitleContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
     &::before {
       content: "";
       display: block;
@@ -90,13 +94,12 @@ export const TitleContainer = styled.div`
   }
 `;
 
-export const DownButton = styled.button`
+export const DownButton = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 30;
   position: absolute;
-  bottom: 30px;
   margin: 0px auto;
   cursor: pointer;
   border-radius: 50%;
@@ -104,7 +107,6 @@ export const DownButton = styled.button`
   border: thin solid white;
   height: 38px;
   width: 40px;
-  
   transition: 0.5s ease;
   img {
     width: 18px;

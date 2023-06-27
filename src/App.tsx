@@ -30,7 +30,7 @@ function App() {
           <Topbar />
           <Introduction />
           <GeneralInfosContainer>
-            {/* <Aboutme /> */}
+            <Aboutme />
             {/* <Experience /> */}
           </GeneralInfosContainer>
         </MainContainer>

@@ -34,6 +34,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 export const MainContainer = styled.div`
   position: relative;
+  overflow: hidden;
 `;
 
 export const GradientBackground = styled.div`
@@ -48,7 +49,10 @@ export const GeneralInfosContainer = styled.div`
   padding: 0 90px;
   max-width: 1700px;
   margin: 0 auto;
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
+    padding: 0 50px;
+  }
+  @media(max-width: 600px){
     padding: 0 30px;
   }
 `;
@@ -56,9 +60,6 @@ export const GeneralInfosContainer = styled.div`
 export const Text = styled(motion.p)`
   letter-spacing: 0.1em;
   line-height: 30px;
-  font-size: 14px;
+  font-size: clamp(11px, 0.9vw, 14px);
   color: ${(props) => props.theme.colors.secondary};
-  @media (max-width: 500px) {
-    font-size: 12px;
-  }
 `;
