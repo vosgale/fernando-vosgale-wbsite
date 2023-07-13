@@ -17,7 +17,7 @@ export const Aboutme = () => {
       opacity: 0,
     },
     ImageInView: {
-      opacity: 0.8,
+      opacity: 0.6,
       transition: { duration: 1.5, delay: 0.7 },
     },
   };

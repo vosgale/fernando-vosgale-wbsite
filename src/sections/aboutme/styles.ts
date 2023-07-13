@@ -10,9 +10,6 @@ export const AboutMeContainer = styled.div`
   align-items: baseline;
   flex-direction: column;
   overflow: hidden;
-  @media (max-width: 900px) {
-    margin-bottom: 60px;
-  }
 `;
 
 export const ContentContainer = styled.div`
@@ -26,6 +23,7 @@ export const ContentContainer = styled.div`
 export const AboutText = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 50%;
   gap: 20px;
   ul {
@@ -41,9 +39,9 @@ export const AboutText = styled(motion.div)`
   }
   @media (max-width: 800px) {
     width: 100%;
-    ul{
-      li{
-        p{
+    ul {
+      li {
+        p {
           font-size: 11px;
           line-height: normal;
         }
@@ -54,13 +52,15 @@ export const AboutText = styled(motion.div)`
 
 export const ProfileImage = styled(motion.img)`
   width: clamp(300px, 30vw, 380px);
-  height: clamp(300px, 30vw, 380px);
   object-fit: cover;
   align-self: center;
-  border-radius: 50%;
+  @media (max-width: 800px) {
+    opacity: 0.1 !important;
+    width: 100vw;
+    top: 125px;
+    position: absolute;
+  }
   @media (max-width: 500px) {
-    width: 60vw;
-    height: 60vw;
-    margin-top: 50px;
+    height: 100%;
   }
 `;

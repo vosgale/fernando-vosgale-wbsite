@@ -52,7 +52,7 @@ export const ButtonOption = styled.div<{ active?: boolean }>`
 
 export const InfosContainer = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 45% 50%;
   align-items: center;
   @media (max-width: 800px) {
     display: flex;
@@ -65,8 +65,6 @@ export const TextContainer = styled.div`
   flex-direction: column;
   .description {
     margin-top: 56px;
-    letter-spacing: 1.6;
-    line-height: 33px;
   }
 `;
 

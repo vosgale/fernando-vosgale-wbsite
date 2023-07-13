@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styled, { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
@@ -57,5 +56,6 @@ export const GeneralInfosContainer = styled.div`
   }
   @media (max-width: 600px) {
     padding: 0 30px;
+    margin: 0;
   }
 `;

@@ -1,6 +1,7 @@
 // eslint-disable-next-line react-refresh/only-export-components
 export const IMAGES = {
   image1: new URL("./shakespeare.png", import.meta.url).href,
+  mobile: new URL("./mobileShakespeare.png", import.meta.url).href,
   logo: new URL("./logo.svg", import.meta.url).href,
   profile: new URL("./profile.jpg", import.meta.url).href,
   spot: new URL("./spot.svg", import.meta.url).href,
