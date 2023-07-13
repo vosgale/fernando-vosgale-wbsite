@@ -3,16 +3,17 @@ import styled from "styled-components";
 
 export const Styledh2 = styled(motion.h2)`
   color: ${(props) => props.theme.colors.secondary};
-  font-size: clamp(20px, 2vw, 30px);
-  font-weight: 100;
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: 400;
+  text-transform: uppercase;
   span {
     color: ${(props) => props.theme.colors.primary};
   }
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 48px;
   &::after {
     content: "";
     display: block;

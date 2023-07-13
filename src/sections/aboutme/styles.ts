@@ -7,12 +7,10 @@ export const AboutMeContainer = styled.div`
   position: relative;
   z-index: 30;
   padding-top: 100px;
-  height: 100vh;
   align-items: baseline;
   flex-direction: column;
   overflow: hidden;
   @media (max-width: 900px) {
-    height: auto;
     margin-bottom: 60px;
   }
 `;
@@ -43,6 +41,14 @@ export const AboutText = styled(motion.div)`
   }
   @media (max-width: 800px) {
     width: 100%;
+    ul{
+      li{
+        p{
+          font-size: 11px;
+          line-height: normal;
+        }
+      }
+    }
   }
 `;
 

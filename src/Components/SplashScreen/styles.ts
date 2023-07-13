@@ -10,4 +10,8 @@ export const SplashScreenContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  svg {
+    width: 186px;
+    overflow: visible;
+  }
 `;

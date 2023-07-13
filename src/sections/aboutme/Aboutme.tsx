@@ -1,12 +1,11 @@
 import Title from "../../Components/Title";
 import {
-  AboutMeContainer,
   AboutText,
   ContentContainer,
   ProfileImage,
 } from "./styles";
 import IMAGES from "../../Images";
-import { Text } from "../../styles/global-styles";
+import { Container, Text } from "../../styles/styled-utils";
 export const Aboutme = () => {
   const AboutVariants = {
     TextInitial: { opacity: 0 },
@@ -23,7 +22,7 @@ export const Aboutme = () => {
     },
   };
   return (
-    <AboutMeContainer id="section-1">
+    <Container id="section-1" style={{paddingTop: "10vh"}}>
       <Title number={1} text="Sobre" />
       <ContentContainer>
         <AboutText
@@ -69,6 +68,6 @@ export const Aboutme = () => {
           alt="Fernando Vosgale"
         ></ProfileImage>
       </ContentContainer>
-    </AboutMeContainer>
+    </Container>
   );
 };

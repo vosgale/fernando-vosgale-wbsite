@@ -25,7 +25,7 @@ export const ButtonsContainer = styled.div`
   justify-content: flex-start;
   gap: 30px;
   overflow-x: auto;
-  padding: 15px 0;
+  padding-bottom: 15px;
 `;
 export const ButtonOption = styled.div<{ active?: boolean }>`
   letter-spacing: 4px;
@@ -46,6 +46,7 @@ export const ButtonOption = styled.div<{ active?: boolean }>`
   }
   &:hover {
     background-color: #393939;
+    padding: 10px 20px;
   }
 `;
 

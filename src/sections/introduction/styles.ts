@@ -90,11 +90,12 @@ export const DownButton = styled(motion.button)`
   z-index: 30;
   position: absolute;
   margin: 0px auto;
+  bottom: 30px;
   cursor: pointer;
   border-radius: 50%;
   background-color: transparent;
   border: thin solid white;
-  height: 38px;
+  height: 40px;
   width: 40px;
   transition: 0.5s;
   img {

@@ -1,10 +1,9 @@
 import Title from "../../Components/Title";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   ButtonOption,
   ButtonsContainer,
   ContentContainer,
-  ExperienceContainer,
   ExperienceDateContainer,
   ImageContainer,
   InfosContainer,
@@ -12,7 +11,7 @@ import {
 } from "./styles";
 import { motion, useAnimation } from "framer-motion";
 import IMAGES from "../../Images";
-import { Text } from "../../styles/global-styles";
+import { Container, Text } from "../../styles/styled-utils";
 export const Experience = () => {
   const [active, setActive] = useState(0);
   const experienceOptions = [
@@ -71,7 +70,7 @@ export const Experience = () => {
   };
 
   return (
-    <ExperienceContainer>
+    <Container>
       <Title number={2} text="EXPERIÊNCIA" />
       <ContentContainer>
         <ButtonsContainer id="scrol">
@@ -115,6 +114,6 @@ export const Experience = () => {
           </ImageContainer>
         </InfosContainer>
       </ContentContainer>
-    </ExperienceContainer>
+    </Container>
   );
 };

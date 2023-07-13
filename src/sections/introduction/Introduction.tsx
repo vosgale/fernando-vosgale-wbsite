@@ -1,7 +1,7 @@
 import { AboutContainer, DownButton, TitleContainer } from "./styles";
 import IMAGES from "../../Images";
 import { motion } from "framer-motion";
-import { Text } from "../../styles/global-styles";
+import { Text } from "../../styles/styled-utils";
 export const Introduction = () => {
   const titleMotionConfig = {
     initialh1: {
@@ -52,7 +52,6 @@ export const Introduction = () => {
           transition={{
             delay: 0.8,
             duration: 2,
-            type: "tween",
           }}
         >
           <small>Olá, eu sou o</small>
@@ -65,19 +64,18 @@ export const Introduction = () => {
           transition={{
             delay: 0.8,
             duration: 2,
-            type: "tween",
           }}
         >
           Vosgale
         </motion.h2>
 
         <Text
-          initial={{ opacity: 0, right: "-100px" }}
-          animate={{ opacity: 1, right: 0 }}
+          variants={titleMotionConfig}
+          initial="initialh2"
+          animate="animateh2"
           transition={{
-            delay: 1.3,
-            duration: 1.8,
-            type: "tween",
+            delay: 0.8,
+            duration: 2,
           }}
         >
           Desenvolvedor de software especializado em criar (e projetar)
@@ -86,12 +84,12 @@ export const Introduction = () => {
       </TitleContainer>
 
       <DownButton
-        initial={{ opacity: 0, bottom: "50px" }}
-        animate={{ opacity: 1, bottom: "30px" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         onClick={() => handleClickScroll()}
         transition={{
-          delay: 1.2,
-          duration: 1,
+          delay: 3,
+          duration: 2,
         }}
       >
         <img src={IMAGES.downArrow}></img>

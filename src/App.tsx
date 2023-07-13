@@ -11,19 +11,19 @@ import Aboutme from "./sections/aboutme";
 import SplashScreen from "./Components/SplashScreen";
 import { useState, useEffect } from "react";
 import Experience from "./sections/experience";
+import MainProjects from "./sections/mainProjects";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 100);
+    }, 4000);
   }, []);
-   
+
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyles />
-
       <SplashScreen isLoading={isLoading} />
       {!isLoading && (
         <MainContainer>
@@ -33,6 +33,7 @@ function App() {
           <GeneralInfosContainer>
             <Aboutme />
             <Experience />
+            <MainProjects />
           </GeneralInfosContainer>
         </MainContainer>
       )}

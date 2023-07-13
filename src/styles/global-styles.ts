@@ -48,18 +48,14 @@ export const GradientBackground = styled.div`
 export const GeneralInfosContainer = styled.div`
   padding: 0 90px;
   max-width: 1700px;
-  margin: 0 auto;
+  margin: 100px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30vh;
   @media (max-width: 800px) {
     padding: 0 50px;
   }
-  @media(max-width: 600px){
+  @media (max-width: 600px) {
     padding: 0 30px;
   }
-`;
-
-export const Text = styled(motion.p)`
-  letter-spacing: 0.1em;
-  line-height: 30px;
-  font-size: clamp(11px, 0.9vw, 14px);
-  color: ${(props) => props.theme.colors.secondary};
 `;
