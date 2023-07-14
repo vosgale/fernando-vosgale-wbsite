@@ -9,6 +9,7 @@ export const AboutContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-size: cover;
   img {
     width: 100%;
   }

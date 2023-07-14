@@ -51,16 +51,17 @@ export const AboutText = styled(motion.div)`
 `;
 
 export const ProfileImage = styled(motion.img)`
-  width: clamp(300px, 30vw, 380px);
+  width: clamp(300px, 20vw, 380px);
+  height: clamp(300px, 20vw, 380px);
   object-fit: cover;
   align-self: center;
+  border-radius: 50%;
+  box-shadow: 4px 20px 20px 5px black;
   @media (max-width: 800px) {
     opacity: 0.1 !important;
     width: 100vw;
     top: 125px;
     position: absolute;
-  }
-  @media (max-width: 500px) {
-    height: 100%;
+    display: none;
   }
 `;

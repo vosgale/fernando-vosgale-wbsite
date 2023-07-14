@@ -31,27 +31,15 @@ export const Introduction = () => {
   };
   return (
     <AboutContainer>
-      <motion.img
-        initial={{
-          opacity: 0,
-        }}
-        animate={{ opacity: 0.5 }}
-        transition={{
-          delay: 2,
-          duration: 2,
-          type: "tween",
-        }}
-        src={IMAGES.image1}
-        alt="background"
-      />
       <TitleContainer>
         <motion.h1
           variants={titleMotionConfig}
           initial="initialh1"
           animate="animateh1"
           transition={{
-            delay: 0.8,
-            duration: 2,
+            ease: "easeInOut",
+            delay: 1,
+            duration: 1.3,
           }}
         >
           <small>Olá, eu sou o</small>
@@ -62,8 +50,9 @@ export const Introduction = () => {
           initial="initialh2"
           animate="animateh2"
           transition={{
-            delay: 0.8,
-            duration: 2,
+            delay: 1.5,
+            ease: "easeInOut",
+            duration: 1.3,
           }}
         >
           Vosgale
@@ -74,8 +63,9 @@ export const Introduction = () => {
           initial="initialh2"
           animate="animateh2"
           transition={{
-            delay: 0.8,
-            duration: 2,
+            ease: "easeInOut",
+            delay: 1.8,
+            duration: 1.3,
           }}
         >
           Desenvolvedor de software especializado em criar (e projetar)
@@ -89,6 +79,7 @@ export const Introduction = () => {
         onClick={() => handleClickScroll()}
         transition={{
           delay: 3,
+          ease: "easeInOut",
           duration: 2,
         }}
       >

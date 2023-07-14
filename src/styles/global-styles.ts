@@ -1,4 +1,18 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
+
+const backgroundAnimation = keyframes`
+
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+
+`;
 
 export default createGlobalStyle`
 *{
@@ -10,6 +24,10 @@ body{
   background-color: ${(props) => props.theme.colors.background};
   color: #FFFFFF;
   font-family: 'Roboto';
+  background-size: 200% 200%;
+  background-image: ${(props) => props.theme.colors.backgroundGradient};
+  background-attachment: fixed;
+  animation: ${backgroundAnimation} 30s ease infinite;
 }
 body::-webkit-scrollbar {
   width: 5px;
@@ -36,21 +54,12 @@ export const MainContainer = styled.div`
   overflow: hidden;
 `;
 
-export const GradientBackground = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: ${(props) => props.theme.colors.backgroundGradient};
-  z-index: 10;
-`;
-
 export const GeneralInfosContainer = styled.div`
   padding: 0 90px;
-  max-width: 1700px;
-  margin: 100px auto 0;
+  max-width: 1400px;
+  margin: 50px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 30vh;
   @media (max-width: 800px) {
     padding: 0 50px;
   }

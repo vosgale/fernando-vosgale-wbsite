@@ -1,7 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyles, {
   GeneralInfosContainer,
-  GradientBackground,
   MainContainer,
 } from "./styles/global-styles";
 import dark from "./styles/themes/dark";
@@ -27,7 +26,6 @@ function App() {
       <SplashScreen isLoading={isLoading} />
       {!isLoading && (
         <MainContainer>
-          <GradientBackground />
           <Topbar />
           <Introduction />
           <GeneralInfosContainer>
