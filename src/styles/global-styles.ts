@@ -56,7 +56,7 @@ export const MainContainer = styled.div`
 
 export const GeneralInfosContainer = styled.div`
   padding: 0 90px;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 50px auto 0;
   display: flex;
   flex-direction: column;

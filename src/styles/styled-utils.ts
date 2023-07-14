@@ -12,6 +12,6 @@ export const Container = styled.div`
   flex-direction: column;
   position: relative;
   z-index: 30;
-  min-height: 80vh;
+  min-height: 110vh;
   justify-content: center;
 `;
