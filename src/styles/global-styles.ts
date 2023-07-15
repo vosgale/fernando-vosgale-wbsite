@@ -38,9 +38,10 @@ body{
   background-image: ${(props) => props.theme.colors.backgroundGradient};
   background-attachment: fixed;
   animation: ${backgroundAnimation} 30s ease infinite;
-  min-height: 100%;
+  height: 100%;
   @media(max-width: 500px){
     background-size: 120% 120%;
+    padding-bottom: 150px;
     animation: ${backgroundAnimation} 15s ease infinite;
   } 
 }
