@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const TopbarContainer = styled.div`
   width: 100%;
   height: 80px;
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   align-items: center;
   z-index: 40;
   padding: 0 50px;
   justify-content: space-between;
+  transition: 0.5s ease;
+  position: fixed;
   img {
     width: 50px;
   }

@@ -1,9 +1,22 @@
 import { DesktopMenu, MobileMenu, TopbarContainer } from "./styles";
 import { Divide as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import IMAGES from "../../Images";
+import useScrollDirection from "../../hooks/useScrollDirection";
 export const Topbar = () => {
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menu = ["Sobre", "Experiência", "Projetos", "Repositórios"];
 
@@ -19,7 +32,14 @@ export const Topbar = () => {
   };
 
   return (
-    <TopbarContainer>
+    <TopbarContainer
+      style={{
+        transform:
+          scrollDirection === "down" ? "translateY(-80px)" : "translateY(0px)",
+        backgroundColor: scrolledToTop ? "transparent" : "#10101059",
+        backdropFilter: scrolledToTop ? "none" : "blur(10px)",
+      }}
+    >
       <motion.img
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

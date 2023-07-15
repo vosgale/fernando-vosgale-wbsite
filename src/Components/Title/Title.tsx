@@ -8,7 +8,6 @@ export const Title = ({ number, text }: TitleProps) => {
   return (
     <Styledh2
       initial={{ opacity: 0, left: "-100px" }}
-      viewport={{ once: true }}
       whileInView={{ opacity: 1, left: "0" }}
       transition={{ duration: 1 }}
     >

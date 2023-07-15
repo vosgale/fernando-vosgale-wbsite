@@ -18,8 +18,8 @@ export const Styledh2 = styled(motion.h2)`
     content: "";
     display: block;
     width: clamp(100px, 27vw, 400px);
-    background-color: ${(props) => props.theme.colors.primary};
+  
     height: 1px;
-    background-image: linear-gradient(45deg, black, transparent);
+    background-image: linear-gradient(45deg, #ffffff00, #ffeeee)
   }
 `;
