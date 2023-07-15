@@ -58,7 +58,9 @@ export const InfosContainer = styled.div`
   padding-left: 30px;
   overflow: hidden;
   @media (max-width: 800px) {
-    padding-left: 15px;
+    padding-left:30px;
+    margin-top: 20px;
+    margin-left: 8px;
   }
 `;
 

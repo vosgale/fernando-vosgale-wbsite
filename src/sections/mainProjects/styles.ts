@@ -6,8 +6,8 @@ export const ProjectsContainer = styled.div`
   gap: 150px;
   margin-top: 100px;
   @media (max-width: 800px) {
-    gap: 60px;
-    margin-top: 0;
+    gap: 100px;
+    margin-top: 20px;
   }
 `;
 export const ProjectItem = styled.div<{ direction: string }>`

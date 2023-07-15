@@ -20,6 +20,13 @@ export default createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
 }
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 body{
   background-color: ${(props) => props.theme.colors.background};
   color: #FFFFFF;
@@ -28,6 +35,10 @@ body{
   background-image: ${(props) => props.theme.colors.backgroundGradient};
   background-attachment: fixed;
   animation: ${backgroundAnimation} 30s ease infinite;
+  @media(max-width: 500px){
+    background-size: 120% 120%;
+    animation: ${backgroundAnimation} 15s ease infinite;
+  } 
 }
 body::-webkit-scrollbar {
   width: 5px;
@@ -64,7 +75,7 @@ export const GeneralInfosContainer = styled.div`
     padding: 0 50px;
   }
   @media (max-width: 600px) {
-    padding: 0 30px;
+    padding: 0 20px;
     margin: 0;
   }
 `;
