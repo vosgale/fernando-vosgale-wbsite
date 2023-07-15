@@ -1,87 +1,79 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const ExperienceContainer = styled.div`
-  position: relative;
-  z-index: 30;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @media (max-width: 800px) {
-    min-height: 100vh;
-    height: auto;
-    margin-bottom: 60px;
-  }
-`;
 export const ContentContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-top: 30px;
+  gap: 80px;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 export const ButtonsContainer = styled.div`
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  width: auto;
   justify-content: flex-start;
-  gap: 30px;
-  overflow-x: auto;
   padding-bottom: 15px;
+  @media (max-width: 800px) {
+    flex-direction: row;
+    overflow-x: auto;
+  }
 `;
 export const ButtonOption = styled.div<{ active?: boolean }>`
   letter-spacing: 4px;
   text-transform: uppercase;
-  background: ${(props) => (props.active ? "#393939" : "transparent")};
-  padding: ${(props) => (props.active ? "10px 20px" : "10px 5px")};
+  border-left: ${(props) =>
+    props.active ? "thin solid #393939" : "thin solid rgb(53 53 53 / 34%)"};
+  padding: 15px;
   color: ${(props) => props.theme.colors.primary};
-  border: none;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   font-weight: 100;
   white-space: nowrap;
+  background-color: ${(props) => (props.active ? "#3939394f" : "transparent")};
   cursor: pointer;
   transition: 0.5s ease;
-  @media (max-width: 800px) {
-    font-size: 14px;
-  }
+  font-size: 14px;
   &:hover {
-    background-color: #393939;
-    padding: 10px 20px;
+    border-left: thin solid #393939;
+  }
+  @media (max-width: 800px) {
+    border-left: none;
+    border-bottom: ${(props) =>
+      props.active ? "thin solid #393939" : "thin solid rgb(53 53 53 / 34%)"};
+
+    &:hover {
+      border-left: none;
+      border-bottom: thin solid #393939;
+    }
   }
 `;
 
 export const InfosContainer = styled.div`
-  display: grid;
-  grid-template-columns: 45% 50%;
+  display: flex;
   align-items: center;
+  max-width: 600px;
+  border-left: thin solid #282727;
+  padding-left: 30px;
+  overflow: hidden;
   @media (max-width: 800px) {
-    display: flex;
-    flex-direction: column-reverse;
+    padding-left: 15px;
   }
 `;
 
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  .description {
-    margin-top: 56px;
-  }
-`;
-
-export const ImageContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-top: 60px;
+export const TextContainer = styled(motion.div)`
   img {
-    width: 80%;
+    width: 200px;
   }
-  @media (max-width: 800px) {
-    justify-content: center;
-    img {
-      width: 70%;
-    }
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
   }
+  padding-top: 15px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
 `;
 
 export const ExperienceDateContainer = styled(motion.div)`

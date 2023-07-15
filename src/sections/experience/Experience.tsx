@@ -5,11 +5,10 @@ import {
   ButtonsContainer,
   ContentContainer,
   ExperienceDateContainer,
-  ImageContainer,
   InfosContainer,
   TextContainer,
 } from "./styles";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import IMAGES from "../../Images";
 import { Container, Text } from "../../styles/styled-utils";
 export const Experience = () => {
@@ -30,7 +29,7 @@ export const Experience = () => {
     {
       name: "Lets Grow",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere mauris a sapien suscipit vulputate. Nam quam dui, viverra vitae hendrerit vel, sollicitudin ut enim. Etiam sodales est in dapibus gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`,
-      logo: "",
+      logo: undefined,
       duration: {
         start: "Agosto, 2020",
         end: "Abril, 2022",
@@ -59,14 +58,6 @@ export const Experience = () => {
 
   const handleClickScroll = (activeIndex: number) => {
     setActive(activeIndex);
-    const element = document.getElementById("scrol");
-
-    if (element && activeIndex !== 2) {
-      element.scrollTo({
-        left: activeIndex < 1 ? 0 : element.scrollWidth,
-        behavior: "smooth",
-      });
-    }
   };
 
   return (
@@ -86,14 +77,13 @@ export const Experience = () => {
         </ButtonsContainer>
 
         <InfosContainer>
-          <TextContainer>
-            <Text
-              animate={controls}
-              transition={{ duration: 1.2 }}
-              className="description"
-            >
-              {experienceOptions[active].description}
-            </Text>
+          <TextContainer animate={controls} transition={{ duration: 1.2 }}>
+            {!experienceOptions[active].logo ? (
+              <h3>{experienceOptions[active].name}</h3>
+            ) : (
+              <img src={experienceOptions[active].logo}></img>
+            )}
+            <Text>{experienceOptions[active].description}</Text>
             <ExperienceDateContainer
               animate={controls}
               transition={{ duration: 1.1, delay: 0.2 }}
@@ -105,13 +95,6 @@ export const Experience = () => {
               </Text>
             </ExperienceDateContainer>
           </TextContainer>
-          <ImageContainer>
-            <motion.img
-              animate={controls}
-              transition={{ delay: 0.3, duration: 1.2 }}
-              src={experienceOptions[active].logo}
-            ></motion.img>
-          </ImageContainer>
         </InfosContainer>
       </ContentContainer>
     </Container>
