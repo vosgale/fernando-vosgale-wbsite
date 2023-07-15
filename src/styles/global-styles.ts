@@ -19,6 +19,9 @@ export default createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @media(max-width: 500px){
+    ::-webkit-scrollbar { display: none; }
+  }
 }
 input,
 textarea,
