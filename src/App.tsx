@@ -11,8 +11,8 @@ import SplashScreen from "./Components/SplashScreen";
 import { useState, useEffect } from "react";
 import Experience from "./sections/experience";
 import MainProjects from "./sections/mainProjects";
-import Repositories from "./sections/repositories";
-import Footer from "./sections/footer";
+// import Repositories from "./sections/repositories";
+// import Footer from "./sections/footer";
 import { GradientBackground } from "./styles/styled-utils";
 
 function App() {
