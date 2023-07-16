@@ -30,18 +30,15 @@ export const Container = styled.div`
 `;
 
 export const GradientBackground = styled.div`
-  background-size: 200% 200%;
+  background-size: 150% 150%;
   height: 100vh;
   background-repeat: no-repeat;
-  background-position: center;
-  position: fixed;
-  width: 100vw;
+  position: absolute;
+  width: 100%;
   background-image: ${(props) => props.theme.colors.backgroundGradient};
   animation: ${backgroundAnimation} 30s ease infinite;
   height: 100%;
   @media (max-width: 500px) {
-    background-size: 120% 120%;
-    padding-bottom: 150px;
     animation: ${backgroundAnimation} 15s ease infinite;
   }
 `;
