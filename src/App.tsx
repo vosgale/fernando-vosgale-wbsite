@@ -36,8 +36,8 @@ function App() {
             <Aboutme />
             <Experience />
             <MainProjects />
-            {/* <Repositories />
-            <Footer /> */}
+            <Repositories />
+            <Footer />
           </GeneralInfosContainer>
         </MainContainer>
       )}

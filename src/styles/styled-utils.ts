@@ -31,7 +31,9 @@ export const Container = styled.div`
 
 export const GradientBackground = styled.div`
   background-size: 200% 200%;
-  height: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
   position: fixed;
   width: 100vw;
   background-image: ${(props) => props.theme.colors.backgroundGradient};
