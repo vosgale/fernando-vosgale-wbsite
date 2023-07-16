@@ -14,4 +14,5 @@ export const IMAGES = {
   materialUi: new URL("./mui-logo.svg", import.meta.url).href,
   react: new URL("./react-logo.svg", import.meta.url).href,
   ts: new URL("./ts-logo.svg", import.meta.url).href,
+  footerLogo: new URL("./footerLogo.svg", import.meta.url).href,
 };

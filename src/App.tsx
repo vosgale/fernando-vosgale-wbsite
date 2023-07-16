@@ -11,6 +11,9 @@ import SplashScreen from "./Components/SplashScreen";
 import { useState, useEffect } from "react";
 import Experience from "./sections/experience";
 import MainProjects from "./sections/mainProjects";
+import Repositories from "./sections/repositories";
+import Footer from "./sections/footer";
+import { GradientBackground } from "./styles/styled-utils";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +26,7 @@ function App() {
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyles />
+      <GradientBackground/>
       <SplashScreen isLoading={isLoading} />
       {!isLoading && (
         <MainContainer>
@@ -32,6 +36,8 @@ function App() {
             <Aboutme />
             <Experience />
             <MainProjects />
+            {/* <Repositories />
+            <Footer /> */}
           </GeneralInfosContainer>
         </MainContainer>
       )}

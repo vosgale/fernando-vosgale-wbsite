@@ -1,18 +1,4 @@
-import styled, { createGlobalStyle, keyframes } from "styled-components";
-
-const backgroundAnimation = keyframes`
-
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-
-`;
+import styled, { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 *{
@@ -34,17 +20,11 @@ body{
   background-color: ${(props) => props.theme.colors.background};
   color: #FFFFFF;
   font-family: 'Roboto';
-  background-size: 200% 200%;
-  background-image: ${(props) => props.theme.colors.backgroundGradient};
-  background-attachment: fixed;
-  animation: ${backgroundAnimation} 30s ease infinite;
-  height: 100%;
-  @media(max-width: 500px){
-    background-size: 120% 120%;
-    padding-bottom: 150px;
-    animation: ${backgroundAnimation} 15s ease infinite;
-  } 
+  position: relative;
+ 
+
 }
+
 body::-webkit-scrollbar {
   width: 5px;
   border-radius: 5px;
