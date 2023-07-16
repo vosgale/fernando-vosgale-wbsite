@@ -1,5 +1,5 @@
 import IMAGES from "../../Images";
-import { Container, Text } from "../../styles/styled-utils";
+import {  Text } from "../../styles/styled-utils";
 import { FooterContainer } from "./styles";
 
 export const Footer = () => {
