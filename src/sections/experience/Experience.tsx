@@ -48,6 +48,11 @@ export const Experience = () => {
     },
   ];
   const controls = useAnimation();
+
+
+
+
+  
   useEffect(() => {
     controls.set({ opacity: 0, transform: "translateY(50px)" });
     controls.start({

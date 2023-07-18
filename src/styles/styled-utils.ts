@@ -40,6 +40,11 @@ export const GradientBackground = styled.div`
   animation: ${backgroundAnimation} 30s ease infinite;
   @media (max-width: 500px) {
     background-size: 150% 150%;
-    animation: ${backgroundAnimation} 10s ease infinite;
+    animation: ${backgroundAnimation} 30s ease infinite;
+    background-image: linear-gradient(
+      278deg,
+      rgb(1, 1, 1) 20.38%,
+      rgba(21, 21, 21, 0.8) 74.15%
+    );
   }
 `;
