@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const RepositoriesContainer = styled.div`
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 50% 40%;
   align-items: center;
   gap: 10%;
-  @media(max-width: 600px){
+  @media (max-width: 600px) {
     display: flex;
     flex-direction: column-reverse;
     gap: 30px;
@@ -18,7 +18,8 @@ export const CarouselDescription = styled.div`
   gap: 20px;
   align-items: flex-end;
   text-align: end;
-  @media(max-width: 600px){
+
+  @media (max-width: 600px) {
     align-items: flex-start;
     text-align: start;
   }
@@ -26,7 +27,30 @@ export const CarouselDescription = styled.div`
 
 export const CarouselButtonsContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 16px;
+  .directionButton {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    border: thin solid white;
+    transition: 0.5s ease;
+    cursor: pointer;
+    &:hover{
+      background-color: white;
+      img{
+        filter: invert(1);
+      }
+    }
+    img{
+      height: 15px;
+      object-fit: cover;
+    }
+  }
 `;
 export const CarouselButton = styled.div<{ active: boolean }>`
   height: 12px;
@@ -40,15 +64,17 @@ export const CarouselButton = styled.div<{ active: boolean }>`
     background-color: ${(props) => props.theme.colors.primary};
   }
 `;
+
 export const CarouselImages = styled.div`
   display: flex;
   position: relative;
+
   img {
-    width: 600px;
-  }
-  @media(max-width: 600px){
-    img {
     width: 100%;
   }
+  @media (max-width: 600px) {
+    img {
+      width: 100%;
+    }
   }
 `;

@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 const backgroundAnimation = keyframes`
-
-	0% {
+0% {
 		background-position: 0% 50%;
 	}
 	50% {
@@ -30,17 +29,17 @@ export const Container = styled.div`
 `;
 
 export const GradientBackground = styled.div`
-  background-size: 200% 200%;
+  background-size: 400% 400%;
   height: 100vh;
   background-repeat: no-repeat;
   position: absolute;
   width: 100%;
   height: 100%;
   background-image: ${(props) => props.theme.colors.backgroundGradient};
-  animation: ${backgroundAnimation} 30s ease infinite;
+  animation: ${backgroundAnimation} 10s ease infinite;
   @media (max-width: 500px) {
-    background-size: 150% 150%;
-    animation: ${backgroundAnimation} 30s ease infinite;
+    background-size: 300% 150%;
+    animation: ${backgroundAnimation} 15s ease infinite;
     background-image: linear-gradient(
       278deg,
       rgb(1, 1, 1) 20.38%,

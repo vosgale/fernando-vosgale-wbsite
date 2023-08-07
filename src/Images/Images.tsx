@@ -10,9 +10,11 @@ export const IMAGES = {
   skolen: new URL("./skolen.svg", import.meta.url).href,
   calendar: new URL("./calendar.svg", import.meta.url).href,
   downArrow: new URL("./downArrow.svg", import.meta.url).href,
-  cpDashboard:  new URL("./cpdashboard.png", import.meta.url).href,
+  cpDashboard: new URL("./cpdashboard.png", import.meta.url).href,
   materialUi: new URL("./mui-logo.svg", import.meta.url).href,
   react: new URL("./react-logo.svg", import.meta.url).href,
   ts: new URL("./ts-logo.svg", import.meta.url).href,
   footerLogo: new URL("./footerLogo.svg", import.meta.url).href,
+  left: new URL("./left.svg", import.meta.url).href,
+  right: new URL("./right.svg", import.meta.url).href,
 };

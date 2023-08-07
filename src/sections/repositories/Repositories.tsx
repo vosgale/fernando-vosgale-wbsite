@@ -59,6 +59,26 @@ export const Repositories = () => {
                 onClick={() => setActiveItem(index)}
               ></CarouselButton>
             ))}
+            <button
+              onClick={() =>
+                activeItem - 1 >= 0
+                  ? setActiveItem(activeItem - 1)
+                  : setActiveItem(repositories.length - 1)
+              }
+              className="directionButton"
+            >
+              <img src={IMAGES.left} />
+            </button>
+            <button
+              className="directionButton"
+              onClick={() =>
+                activeItem + 1 < repositories.length
+                  ? setActiveItem(activeItem + 1)
+                  : setActiveItem(0)
+              }
+            >
+              <img src={IMAGES.right} />
+            </button>
           </CarouselButtonsContainer>
 
           <motion.h3

@@ -4,12 +4,17 @@ export const FooterContainer = styled.footer`
   display: flex;
   height: 100vh;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10vw;
+  img {
+    width: 20vw;
+  }
   .footer_content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+
     h3 {
       font-size: 28px;
       font-style: normal;

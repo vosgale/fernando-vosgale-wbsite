@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 250px;
   margin-top: 100px;
   @media (max-width: 800px) {
     gap: 100px;
