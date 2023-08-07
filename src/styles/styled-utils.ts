@@ -24,7 +24,7 @@ export const Container = styled.div`
   flex-direction: column;
   position: relative;
   z-index: 30;
-  min-height: 110vh;
+  min-height: 80vh;
   justify-content: center;
 `;
 

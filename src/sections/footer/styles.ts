@@ -44,4 +44,19 @@ export const FooterContainer = styled.footer`
       border: none;
     }
   }
+  @media (max-width: 600px) {
+    flex-direction: column;
+
+    img {
+      width: 50vw;
+    }
+    .footer_content {
+      h3 {
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 4px;
+        margin-bottom: 12px;
+      }
+    }
+  }
 `;
