@@ -40,13 +40,13 @@ export const CarouselButtonsContainer = styled.div`
     border: thin solid white;
     transition: 0.5s ease;
     cursor: pointer;
-    &:hover{
+    &:hover {
       background-color: white;
-      img{
+      img {
         filter: invert(1);
       }
     }
-    img{
+    img {
       height: 15px;
       object-fit: cover;
     }
@@ -77,4 +77,14 @@ export const CarouselImages = styled.div`
       width: 100%;
     }
   }
+`;
+
+export const EndLine = styled.div`
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  background-image: linear-gradient(45deg, black, transparent);
+  position: absolute;
+  right: -30%;
+  bottom: 0;
 `;

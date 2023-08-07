@@ -1,4 +1,9 @@
-import { AboutContainer, DownButton, TitleContainer } from "./styles";
+import {
+  AboutContainer,
+  CircleDecoration,
+  DownButton,
+  TitleContainer,
+} from "./styles";
 import IMAGES from "../../Images";
 import { motion } from "framer-motion";
 import { Text } from "../../styles/styled-utils";
@@ -31,15 +36,28 @@ export const Introduction = () => {
   };
   return (
     <AboutContainer>
+      <CircleDecoration
+        initial={{
+          opacity: 0,
+          boxShadow:
+            "rgba(255, 255, 255, 0.5) 20px 1px 20px, rgba(0, 0, 0, 0.2) 10px 10px 20px",
+        }}
+        animate={{
+          opacity: 1,
+          boxShadow:
+            " -10px -10px 20px rgba(255, 255, 255, 0.5),10px 10px 20px rgba(0, 0, 0, 0.2)",
+        }}
+        transition={{ duration: 2 }}
+      />
       <TitleContainer>
         <motion.h1
           variants={titleMotionConfig}
           initial="initialh1"
           animate="animateh1"
           transition={{
-            ease: "easeInOut",
+            ease: "ease",
             delay: 1,
-            duration: 1.3,
+            duration: 2.1,
           }}
         >
           <small>Olá, eu sou o</small>
@@ -51,8 +69,8 @@ export const Introduction = () => {
           animate="animateh2"
           transition={{
             delay: 1.5,
-            ease: "easeInOut",
-            duration: 1.3,
+            ease: "ease",
+            duration: 2.1,
           }}
         >
           Vosgale
@@ -64,8 +82,8 @@ export const Introduction = () => {
           animate="animateh2"
           transition={{
             ease: "easeInOut",
-            delay: 1.8,
-            duration: 1.3,
+            delay: 1.5,
+            duration: 2.1,
           }}
         >
           Desenvolvedor de software especializado em criar (e projetar)
@@ -73,7 +91,7 @@ export const Introduction = () => {
         </Text>
       </TitleContainer>
 
-      <DownButton
+      {/* <DownButton
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={() => handleClickScroll()}
@@ -84,7 +102,7 @@ export const Introduction = () => {
         }}
       >
         <img src={IMAGES.downArrow}></img>
-      </DownButton>
+      </DownButton> */}
     </AboutContainer>
   );
 };

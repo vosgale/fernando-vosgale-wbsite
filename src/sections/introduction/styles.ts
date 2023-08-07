@@ -68,10 +68,11 @@ export const TitleContainer = styled.div`
 
   p {
     font-size: 12px;
-    max-width: 540px;
+    max-width: 350px;
     align-self: flex-end;
     text-align: end;
     line-height: normal;
+    line-height: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -111,4 +112,12 @@ export const DownButton = styled(motion.button)`
       filter: invert();
     }
   }
+`;
+export const CircleDecoration = styled(motion.div)`
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.5),
+    10px 10px 20px rgba(0, 0, 0, 0.2);
 `;

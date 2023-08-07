@@ -1,6 +1,19 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
+const backgroundAnimation = keyframes`
+0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 
+`;
 export default createGlobalStyle`
+
+
 *{
   margin: 0;
   padding: 0;
@@ -17,10 +30,25 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 body{
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
   background-color: ${(props) => props.theme.colors.background};
+  background-attachment: fixed;
+  background-position: center;
+  background-image: ${(props) => props.theme.colors.backgroundGradient};
   color: #FFFFFF;
   font-family: 'Roboto';
   position: relative;
+  animation: ${backgroundAnimation} 30s ease-in-out infinite;
+  @media (max-width: 500px) {
+    background-size: 300% 150%;
+    animation: ${backgroundAnimation} 15s ease infinite;
+    background-image: linear-gradient(
+      278deg,
+      rgb(1, 1, 1) 20.38%,
+      rgba(21, 21, 21, 0.8) 74.15%
+    );
+  }
  
 
 }
