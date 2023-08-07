@@ -1,10 +1,10 @@
 import {
   AboutContainer,
   CircleDecoration,
-  DownButton,
+  // DownButton,
   TitleContainer,
 } from "./styles";
-import IMAGES from "../../Images";
+// import IMAGES from "../../Images";
 import { motion } from "framer-motion";
 import { Text } from "../../styles/styled-utils";
 export const Introduction = () => {
@@ -28,12 +28,12 @@ export const Introduction = () => {
       left: "0px",
     },
   };
-  const handleClickScroll = () => {
-    const element = document.getElementById("section-1");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const handleClickScroll = () => {
+  //   const element = document.getElementById("section-1");
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
   return (
     <AboutContainer>
       <CircleDecoration
