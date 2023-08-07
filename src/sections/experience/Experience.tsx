@@ -10,7 +10,8 @@ import {
 } from "./styles";
 import { useAnimation } from "framer-motion";
 import IMAGES from "../../Images";
-import { Container, Text } from "../../styles/styled-utils";
+import {  Text } from "../../styles/styled-utils";
+import AnimatedContainer from "../../Components/AnimatedContainer";
 export const Experience = () => {
   const [active, setActive] = useState(0);
   const experienceOptions = [
@@ -48,16 +49,11 @@ export const Experience = () => {
     },
   ];
   const controls = useAnimation();
-
-
-
-
-  
   useEffect(() => {
-    controls.set({ opacity: 0, transform: "translateY(50px)" });
+    controls.set({ opacity: 0, transform: "translateX(-50px)" });
     controls.start({
       opacity: 1,
-      transform: "translateY(0px)",
+      transform: "translateX(0px)",
     });
   }, [active, controls]);
 
@@ -66,8 +62,8 @@ export const Experience = () => {
   };
 
   return (
-    <Container>
-      <Title number={2} text="EXPERIÊNCIA" />
+    <AnimatedContainer>
+      <Title number={2} text="Experiência" />
       <ContentContainer>
         <ButtonsContainer id="scrol">
           {experienceOptions.map((item, index) => (
@@ -102,6 +98,6 @@ export const Experience = () => {
           </TextContainer>
         </InfosContainer>
       </ContentContainer>
-    </Container>
+    </AnimatedContainer>
   );
 };

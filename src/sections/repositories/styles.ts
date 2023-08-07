@@ -18,7 +18,9 @@ export const CarouselDescription = styled.div`
   gap: 20px;
   align-items: flex-end;
   text-align: end;
-
+  p{
+    min-height: 100px;
+  }
   @media (max-width: 600px) {
     align-items: flex-start;
     text-align: start;

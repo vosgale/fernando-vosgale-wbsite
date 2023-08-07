@@ -1,33 +1,33 @@
 import {
   AboutContainer,
-  CircleDecoration,
+  // CircleDecoration,
   // DownButton,
-  TitleContainer,
+  // TitleContainer,
 } from "./styles";
 // import IMAGES from "../../Images";
-import { motion } from "framer-motion";
-import { Text } from "../../styles/styled-utils";
+// import { motion } from "framer-motion";
+// import { Text } from "../../styles/styled-utils";
 export const Introduction = () => {
-  const titleMotionConfig = {
-    initialh1: {
-      opacity: 0,
-      right: "-20px",
-    },
+  // const titleMotionConfig = {
+  //   initialh1: {
+  //     opacity: 0,
+  //     right: "-20px",
+  //   },
 
-    animateh1: {
-      opacity: 1,
-      right: "0px",
-    },
+  //   animateh1: {
+  //     opacity: 1,
+  //     right: "0px",
+  //   },
 
-    initialh2: {
-      opacity: 0,
-      left: "-20px",
-    },
-    animateh2: {
-      opacity: 1,
-      left: "0px",
-    },
-  };
+  //   initialh2: {
+  //     opacity: 0,
+  //     left: "-20px",
+  //   },
+  //   animateh2: {
+  //     opacity: 1,
+  //     left: "0px",
+  //   },
+  // };
   // const handleClickScroll = () => {
   //   const element = document.getElementById("section-1");
   //   if (element) {
@@ -36,7 +36,7 @@ export const Introduction = () => {
   // };
   return (
     <AboutContainer>
-      <CircleDecoration
+      {/* <CircleDecoration
         initial={{
           opacity: 0,
           boxShadow:
@@ -91,7 +91,7 @@ export const Introduction = () => {
         </Text>
       </TitleContainer>
 
-      {/* <DownButton
+      <DownButton
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={() => handleClickScroll()}

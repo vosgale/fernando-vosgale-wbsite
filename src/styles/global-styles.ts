@@ -31,10 +31,7 @@ a {
 }
 body{
   background-size: 400% 400%;
-  background-repeat: no-repeat;
   background-color: ${(props) => props.theme.colors.background};
-  background-attachment: fixed;
-  background-position: center;
   background-image: ${(props) => props.theme.colors.backgroundGradient};
   color: #FFFFFF;
   font-family: 'Roboto';
@@ -88,7 +85,8 @@ export const GeneralInfosContainer = styled.div`
     padding: 0 50px;
   }
   @media (max-width: 600px) {
-    padding: 0 20px;
+    padding: 0 30px;
+    gap: 10vh;
     margin: 0;
   }
 `;

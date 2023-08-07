@@ -1,11 +1,8 @@
 import Title from "../../Components/Title";
-import {
-  AboutText,
-  ContentContainer,
-  ProfileImage,
-} from "./styles";
+import { AboutText, ContentContainer, ProfileImageContainer } from "./styles";
 import IMAGES from "../../Images";
-import { Container, Text } from "../../styles/styled-utils";
+import { Text } from "../../styles/styled-utils";
+import AnimatedContainer from "../../Components/AnimatedContainer";
 export const Aboutme = () => {
   const AboutVariants = {
     TextInitial: { opacity: 0 },
@@ -22,9 +19,9 @@ export const Aboutme = () => {
     },
   };
   return (
-    <Container id="section-1" style={{paddingTop: "10vh"}}>
+    <AnimatedContainer>
       <Title number={1} text="Sobre" />
-      <ContentContainer>
+      <ContentContainer id="section-1">
         <AboutText
           variants={AboutVariants}
           initial="TextInitial"
@@ -48,7 +45,18 @@ export const Aboutme = () => {
             deliver amazing experiencesfor the people who use the products I
             develop.
           </Text>
-
+        </AboutText>
+        <ProfileImageContainer
+          variants={AboutVariants}
+          viewport={{ once: true }}
+          whileInView="ImageInView"
+          initial="ImageInitial"
+        >
+          <img
+            className="profile-image"
+            src={IMAGES.profile}
+            alt="Fernando Vosgale"
+          ></img>
           <ul>
             <li>
               <img src={IMAGES.hat}></img>{" "}
@@ -58,16 +66,8 @@ export const Aboutme = () => {
               <img src={IMAGES.spot}></img> <Text>Guarapuava-PR</Text>
             </li>
           </ul>
-        </AboutText>
-        <ProfileImage
-          variants={AboutVariants}
-          viewport={{ once: true }}
-          whileInView="ImageInView"
-          initial="ImageInitial"
-          src={IMAGES.profile}
-          alt="Fernando Vosgale"
-        ></ProfileImage>
+        </ProfileImageContainer>
       </ContentContainer>
-    </Container>
+    </AnimatedContainer>
   );
 };

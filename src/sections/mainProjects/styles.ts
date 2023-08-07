@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const ProjectsContainer = styled.div`
@@ -10,7 +11,7 @@ export const ProjectsContainer = styled.div`
     margin-top: 20px;
   }
 `;
-export const ProjectItem = styled.div<{ direction: string }>`
+export const ProjectItem = styled(motion.div)<{ direction: string }>`
   display: flex;
   width: 100%;
   position: relative;

@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 export const ContentContainer = styled.div`
   display: flex;
-  gap: 80px;
+  height: 280px;
   @media (max-width: 800px) {
     flex-direction: column;
     gap: 0;
+    height: auto;
   }
 `;
 export const ButtonsContainer = styled.div`
@@ -23,7 +24,7 @@ export const ButtonsContainer = styled.div`
 export const ButtonOption = styled.div<{ active?: boolean }>`
   letter-spacing: 4px;
   text-transform: uppercase;
-  border-left: ${(props) =>
+  border-right: ${(props) =>
     props.active ? "thin solid #393939" : "thin solid rgb(53 53 53 / 34%)"};
   padding: 15px;
   color: ${(props) => props.theme.colors.primary};
@@ -36,15 +37,15 @@ export const ButtonOption = styled.div<{ active?: boolean }>`
   transition: 0.5s ease;
   font-size: 14px;
   &:hover {
-    border-left: thin solid #393939;
+    border-right: thin solid #393939;
   }
   @media (max-width: 800px) {
-    border-left: none;
+    border-right: none;
     border-bottom: ${(props) =>
       props.active ? "thin solid #393939" : "thin solid rgb(53 53 53 / 34%)"};
 
     &:hover {
-      border-left: none;
+      border-right: none;
       border-bottom: thin solid #393939;
     }
   }

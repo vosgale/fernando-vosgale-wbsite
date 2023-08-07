@@ -29,13 +29,6 @@ export const TitleContainer = styled.div`
   display: flex;
   position: absolute;
   flex-direction: column;
-
-  @media (max-width: 600px) {
-    width: 100%;
-    text-align: start;
-    padding: 0 30px;
-    gap: 10px;
-  }
   h1,
   h2 {
     text-transform: uppercase;
@@ -44,10 +37,6 @@ export const TitleContainer = styled.div`
     font-weight: 400;
     width: 100%;
     position: relative;
-
-    @media (max-width: 350px) {
-      font-size: 28px;
-    }
   }
   h1 {
     small {
@@ -65,7 +54,6 @@ export const TitleContainer = styled.div`
       text-align: start;
     }
   }
-
   p {
     font-size: 12px;
     max-width: 350px;
@@ -81,6 +69,22 @@ export const TitleContainer = styled.div`
       margin-top: 30px;
       align-self: flex-start;
       text-align: start;
+    }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    text-align: start;
+    padding: 0 30px;
+    gap: 10px;
+    h1,
+    h2 {
+      left: 0 !important;
+    }
+  }
+  @media (max-width: 350px) {
+    h1,
+    h2 {
+      font-size: 28px;
     }
   }
 `;
@@ -112,6 +116,9 @@ export const DownButton = styled(motion.button)`
       filter: invert();
     }
   }
+  @media (max-width: 600px) {
+    display: flex;
+  }
 `;
 export const CircleDecoration = styled(motion.div)`
   width: 40vw;
@@ -120,4 +127,7 @@ export const CircleDecoration = styled(motion.div)`
   position: absolute;
   box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.5),
     10px 10px 20px rgba(0, 0, 0, 0.2);
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;

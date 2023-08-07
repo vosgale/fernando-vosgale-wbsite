@@ -17,6 +17,7 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
   @media (max-width: 800px) {
     flex-direction: column;
+    gap: 50px;
   }
 `;
 
@@ -26,17 +27,7 @@ export const AboutText = styled(motion.div)`
   justify-content: center;
   width: 50%;
   gap: 20px;
-  ul {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    li {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-  }
+
   @media (max-width: 800px) {
     width: 100%;
     ul {
@@ -49,19 +40,27 @@ export const AboutText = styled(motion.div)`
     }
   }
 `;
-
-export const ProfileImage = styled(motion.img)`
-  width: clamp(300px, 20vw, 380px);
-  height: clamp(300px, 20vw, 380px);
-  object-fit: cover;
-  align-self: center;
-  border-radius: 50%;
-  box-shadow: 4px 20px 20px 5px black;
-  @media (max-width: 800px) {
-    opacity: 0.1 !important;
-    width: 100vw;
-    top: 125px;
-    position: absolute;
-    display: none;
+export const ProfileImageContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  .profile-image {
+    width: clamp(300px, 20vw, 380px);
+    height: clamp(300px, 20vw, 380px);
+    object-fit: cover;
+    align-self: center;
+    border-radius: 50%;
+    box-shadow: 4px 20px 20px 5px black;
+  }
+  ul {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
   }
 `;

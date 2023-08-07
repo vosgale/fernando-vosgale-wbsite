@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Title from "../../Components/Title";
 import IMAGES from "../../Images";
-import { Container, Text } from "../../styles/styled-utils";
+import { Text } from "../../styles/styled-utils";
 import {
   CarouselButton,
   CarouselButtonsContainer,
@@ -11,6 +11,7 @@ import {
   RepositoriesContainer,
 } from "./styles";
 import { useAnimation, motion } from "framer-motion";
+import AnimatedContainer from "../../Components/AnimatedContainer";
 
 export const Repositories = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -48,7 +49,7 @@ export const Repositories = () => {
     });
   }, [activeItem, controls]);
   return (
-    <Container>
+    <AnimatedContainer>
       <Title number={4} text="Repositórios" />
 
       <RepositoriesContainer>
@@ -101,6 +102,6 @@ export const Repositories = () => {
         </CarouselImages>
       </RepositoriesContainer>
       <EndLine />
-    </Container>
+    </AnimatedContainer>
   );
 };

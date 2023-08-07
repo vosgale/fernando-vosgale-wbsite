@@ -1,6 +1,7 @@
+import AnimatedContainer from "../../Components/AnimatedContainer";
 import Title from "../../Components/Title";
 import IMAGES from "../../Images";
-import { Container, Text } from "../../styles/styled-utils";
+import { Text } from "../../styles/styled-utils";
 import { ProjectItem, ProjectsContainer } from "./styles";
 
 export const MainProjects = () => {
@@ -36,26 +37,33 @@ export const MainProjects = () => {
   ];
 
   return (
-    <Container>
-      <Title number={3} text="Projetos" />
-      <ProjectsContainer>
-        {Projects.map((project, index) => (
-          <ProjectItem direction={index % 2 === 0 ? "right" : "left"}>
-            <img className="itemImage" src={IMAGES.cpDashboard} />
-            <div className="project-infos">
-              <h2 className="itemTitle">{project.name}</h2>
-              <div className="ItemInfos">
-                <Text>{project.description}</Text>
+    <AnimatedContainer>
+      <>
+        <Title number={3} text="Projetos" />
+        <ProjectsContainer>
+          {Projects.map((project, index) => (
+            <ProjectItem
+              initial={{ opacity: 0, transform: "translateY(10px)" }}
+              whileInView={{ opacity: 1, transform: "translateY(0)" }}
+              transition={{ duration: 1.5 }}
+              direction={index % 2 === 0 ? "right" : "left"}
+            >
+              <img className="itemImage" src={IMAGES.cpDashboard} />
+              <div className="project-infos">
+                <h2 className="itemTitle">{project.name}</h2>
+                <div className="ItemInfos">
+                  <Text>{project.description}</Text>
+                </div>
+                <div className="item-technologies">
+                  <img src={IMAGES.materialUi}></img>
+                  <img src={IMAGES.ts}></img>
+                  <img src={IMAGES.react}></img>
+                </div>
               </div>
-              <div className="item-technologies">
-                <img src={IMAGES.materialUi}></img>
-                <img src={IMAGES.ts}></img>
-                <img src={IMAGES.react}></img>
-              </div>
-            </div>
-          </ProjectItem>
-        ))}
-      </ProjectsContainer>
-    </Container>
+            </ProjectItem>
+          ))}
+        </ProjectsContainer>
+      </>
+    </AnimatedContainer>
   );
 };
