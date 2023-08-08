@@ -6,8 +6,7 @@ import {
   CarouselButton,
   CarouselButtonsContainer,
   CarouselDescription,
-  CarouselImages,
-  EndLine,
+CarouselImages,
   RepositoriesContainer,
 } from "./styles";
 import { useAnimation, motion } from "framer-motion";
@@ -101,7 +100,6 @@ export const Repositories = () => {
           ></motion.img>
         </CarouselImages>
       </RepositoriesContainer>
-      <EndLine />
     </AnimatedContainer>
   );
 };

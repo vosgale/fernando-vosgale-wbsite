@@ -85,7 +85,7 @@ export const GeneralInfosContainer = styled.div`
     padding: 0 50px;
   }
   @media (max-width: 600px) {
-    padding: 0 30px;
+    padding: 0 22px;
     gap: 10vh;
     margin: 0;
   }

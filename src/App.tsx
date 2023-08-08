@@ -13,6 +13,7 @@ import Experience from "./sections/experience";
 import MainProjects from "./sections/mainProjects";
 import Repositories from "./sections/repositories";
 import Footer from "./sections/footer";
+import Skills from "./sections/skills";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +37,7 @@ function App() {
             <Experience />
             <MainProjects />
             <Repositories />
+            <Skills />
             <Footer />
           </GeneralInfosContainer>
         </MainContainer>

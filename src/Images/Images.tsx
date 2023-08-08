@@ -17,4 +17,7 @@ export const IMAGES = {
   footerLogo: new URL("./footerLogo.svg", import.meta.url).href,
   left: new URL("./left.svg", import.meta.url).href,
   right: new URL("./right.svg", import.meta.url).href,
+  design: new URL("./design.svg", import.meta.url).href,
+  experience: new URL("./experience.svg", import.meta.url).href,
+  code: new URL("./code.svg", import.meta.url).href,
 };

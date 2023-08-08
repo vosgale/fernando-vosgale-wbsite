@@ -1,7 +1,7 @@
 import { Styledh2 } from "./styles";
 
 interface TitleProps {
-  number: number | string;
+  number?: number | string;
   text: string;
 }
 export const Title = ({ number, text }: TitleProps) => {
@@ -12,7 +12,7 @@ export const Title = ({ number, text }: TitleProps) => {
       whileInView={{ opacity: 1, left: "0" }}
       transition={{ duration: 1 }}
     >
-      <span>{number}.</span>
+      {number && <span>{number}.</span>}
       {text}
     </Styledh2>
   );
