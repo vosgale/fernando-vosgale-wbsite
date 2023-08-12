@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const SkillCardContainer = styled.div`
@@ -9,7 +10,7 @@ export const SkillCardContainer = styled.div`
   }
 `;
 
-export const SkillCard = styled.div`
+export const SkillCard = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 30px;
