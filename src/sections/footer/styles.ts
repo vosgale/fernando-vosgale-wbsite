@@ -1,62 +1,68 @@
 import styled from "styled-components";
 
-export const FooterContainer = styled.footer`
+export const FooterTitle = styled.p`
   display: flex;
-  height: 100vh;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 10vw;
+  margin: 20vh 0px 5vh;
+
+  gap: 20px;
   img {
-    width: 20vw;
+    width: 70px;
   }
-  .footer_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    h3 {
-      font-size: 28px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: 14px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    p {
-      text-align: center;
-      font-style: normal;
-      text-transform: capitalize;
-    }
-    button {
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      padding: 15px;
-      color: rgb(255, 255, 255);
-      display: flex;
-      align-items: center;
-      font-weight: 100;
-      background-color: transparent;
-      cursor: pointer;
-      transition: all 0.5s ease 0s;
-      font-size: 14px;
-      border: none;
-    }
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 1px;
+    opacity: 0.4;
+    background: white;
   }
-  @media (max-width: 600px) {
-    flex-direction: column;
+  &::before {
+    background-image: linear-gradient(45deg, black, transparent);
+  }
+  &::after {
+    background-image: linear-gradient(270 deg, black, transparent);
+  }
+  @media(max-width: 600px){
+    margin: 10vh 0;
+  }
+`;
 
-    img {
-      width: 50vw;
-    }
-    .footer_content {
-      h3 {
-        font-size: 16px;
-        text-align: center;
-        letter-spacing: 4px;
-        margin-bottom: 12px;
-      }
+export const ContactButton = styled.button`
+  margin-top: 20px;
+  display: inline-block;
+  background: transparent;
+  color: ${(props) => props.theme.colors.secondary};
+  border-radius: 3px;
+  padding: 10px 32px;
+  text-transform: uppercase;
+  transform: skewX(-10deg);
+  transition: 0.7s ease;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -5px;
+    background: ${(props) => props.theme.colors.secondary};
+    border-radius: 3px;
+    width: 0%;
+    height: 110%;
+    z-index: -1;
+    transition: 0.7s ease;
+  }
+  &:hover {
+    color: ${(props) => props.theme.colors.background} !important;
+    transform: scale(1.05) skewX(-10deg);
+    &::after {
+      opacity: 1;
+      width: 120%;
     }
   }
 `;

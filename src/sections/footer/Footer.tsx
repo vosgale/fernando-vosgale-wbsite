@@ -1,19 +1,13 @@
+import AnimatedContainer from "../../Components/AnimatedContainer";
 import IMAGES from "../../Images";
-import {  Text } from "../../styles/styled-utils";
-import { FooterContainer } from "./styles";
+import { FooterTitle } from "./styles";
 
 export const Footer = () => {
   return (
-    <FooterContainer>
-      <img src={IMAGES.footerLogo}></img>
-      <div className="footer_content">
-        <h3>Thank you for visit me</h3>
-        <Text>
-          If you are interested in my work, send-me and email and i will reply
-          son as posible
-        </Text>
-        <button>Click to send e-mail</button>
-      </div>
-    </FooterContainer>
+    <AnimatedContainer autoHeight>
+      <FooterTitle>
+        <img src={IMAGES.footerLogo}></img>
+      </FooterTitle>
+    </AnimatedContainer>
   );
 };

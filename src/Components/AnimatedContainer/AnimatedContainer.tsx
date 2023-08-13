@@ -11,7 +11,7 @@ const Container = styled(motion.section)<{ autoHeight?: boolean }>`
   flex-direction: column;
   position: relative;
   z-index: 30;
-  min-height: ${(props) => (props.autoHeight ? "auto" : "100vh")};
+  min-height: ${(props) => (props.autoHeight ? "5vh" : "100vh")};
   justify-content: center;
 `;
 

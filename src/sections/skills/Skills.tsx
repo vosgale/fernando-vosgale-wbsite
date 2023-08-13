@@ -74,4 +74,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export { Skills };

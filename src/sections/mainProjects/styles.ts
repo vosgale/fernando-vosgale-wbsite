@@ -65,6 +65,8 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
   }
   @media (max-width: 800px) {
     height: 400px;
+    border: thin solid ${(props) => props.theme.colors.secondary};
+    border-radius: 18px;
     .itemImage {
       width: 100%;
       height: 100%;
