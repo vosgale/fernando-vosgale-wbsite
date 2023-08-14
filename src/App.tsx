@@ -4,6 +4,7 @@ import GlobalStyles, {
   MainContainer,
 } from "./styles/global-styles";
 import dark from "./styles/themes/dark";
+import light from "./styles/themes/light";
 import Topbar from "./Components/Topbar";
 import Introduction from "./sections/introduction";
 import Aboutme from "./sections/aboutme";
@@ -17,22 +18,25 @@ import Skills from "./sections/skills";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 4000);
   }, []);
+  const handleChangeTheme = () => {
+    setDarkTheme(!darkTheme);
+  };
 
   return (
-    <ThemeProvider theme={dark}>
+    <ThemeProvider theme={darkTheme ? dark : light}>
       <GlobalStyles />
-
       <SplashScreen isLoading={isLoading} />
       {!isLoading && (
         <MainContainer>
-          <Topbar />
-          <Introduction />
+          <Topbar setTheme={handleChangeTheme} />
           <GeneralInfosContainer>
+            <Introduction />
             <Aboutme />
             <Experience />
             <MainProjects />

@@ -6,7 +6,7 @@ import {
   CarouselButton,
   CarouselButtonsContainer,
   CarouselDescription,
-CarouselImages,
+  CarouselImages,
   RepositoriesContainer,
 } from "./styles";
 import { useAnimation, motion } from "framer-motion";
@@ -50,7 +50,6 @@ export const Repositories = () => {
   return (
     <AnimatedContainer>
       <Title number={4} text="Repositórios" />
-
       <RepositoriesContainer>
         <CarouselDescription>
           <CarouselButtonsContainer>

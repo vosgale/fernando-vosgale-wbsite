@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import IMAGES from "../../Images";
 import useScrollDirection from "../../hooks/useScrollDirection";
-export const Topbar = () => {
+
+export const Topbar = ({ setTheme }: { setTheme: () => void }) => {
   const scrollDirection = useScrollDirection("down");
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const handleScroll = () => {
@@ -19,7 +20,7 @@ export const Topbar = () => {
   }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menu = ["Sobre", "Experiência", "Projetos", "Repositórios"];
-
+  console.log(setTheme);
   const motionConfig = {
     MenuInitial: {
       transform: "translateY(-20px)",
@@ -47,6 +48,7 @@ export const Topbar = () => {
         src={IMAGES.logo}
       />
       <DesktopMenu>
+        {/* <button onClick={() => setTheme()}>Dark</button> */}
         {menu.map((item, index) => (
           <motion.li
             variants={motionConfig}

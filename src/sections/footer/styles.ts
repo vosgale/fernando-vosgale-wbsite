@@ -5,8 +5,7 @@ export const FooterTitle = styled.p`
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin: 20vh 0px 5vh;
-
+  height: 20vh;
   gap: 20px;
   img {
     width: 70px;
@@ -26,7 +25,7 @@ export const FooterTitle = styled.p`
   &::after {
     background-image: linear-gradient(270 deg, black, transparent);
   }
-  @media(max-width: 600px){
+  @media (max-width: 600px) {
     margin: 10vh 0;
   }
 `;
