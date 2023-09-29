@@ -21,12 +21,13 @@ export const Aboutme = () => {
   return (
     <AnimatedContainer>
       <Title number={1} text="Sobre" />
-      <ContentContainer id="section-1">
+      <ContentContainer>
         <AboutText
           variants={AboutVariants}
           initial="TextInitial"
           viewport={{ once: true }}
           whileInView="TextInView"
+          id="section-1"
         >
           <Text>
             I am a software developer specializing in Frontend with a focus on

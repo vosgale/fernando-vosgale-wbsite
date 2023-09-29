@@ -14,21 +14,21 @@ export const MainProjects = () => {
     tortor elementum vitae. Aliquam elementum..`,
     },
     {
-      name: "Clubpetro",
+      name: "Clubpetro-2",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
     tincidunt eget lectus id luctus. Donec quis mauris sed augue pretium
     mattis quis ac urna. Maecenas rutrum tortor sapien, sed interdum
     tortor elementum vitae. Aliquam elementum..`,
     },
     {
-      name: "Clubpetro",
+      name: "Clubpetro-3",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
     tincidunt eget lectus id luctus. Donec quis mauris sed augue pretium
     mattis quis ac urna. Maecenas rutrum tortor sapien, sed interdum
     tortor elementum vitae. Aliquam elementum..`,
     },
     {
-      name: "Clubpetro",
+      name: "Clubpetro-4",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
     tincidunt eget lectus id luctus. Donec quis mauris sed augue pretium
     mattis quis ac urna. Maecenas rutrum tortor sapien, sed interdum
@@ -43,6 +43,7 @@ export const MainProjects = () => {
         <ProjectsContainer>
           {Projects.map((project, index) => (
             <ProjectItem
+            key={project.name}
               initial={{ opacity: 0, transform: "translateY(10px)" }}
               whileInView={{ opacity: 1, transform: "translateY(0)" }}
               transition={{ duration: 1.5 }}

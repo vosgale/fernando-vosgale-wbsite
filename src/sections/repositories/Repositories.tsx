@@ -55,6 +55,7 @@ export const Repositories = () => {
           <CarouselButtonsContainer>
             {repositories.map((_item, index) => (
               <CarouselButton
+                key={_item.title}
                 active={index === activeItem}
                 onClick={() => setActiveItem(index)}
               ></CarouselButton>

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const TitleContainer = styled.div`
@@ -6,8 +7,7 @@ export const TitleContainer = styled.div`
   width: fit-content;
   color: ${(props) => props.theme.colors.primary};
   .hello {
-   
-    font-size: clamp(12px, 0.8vw, 22px);;
+    font-size: clamp(14px, 0.8vw, 22px);;
     font-weight: 100;
   }
   .introduction-description {
@@ -34,7 +34,7 @@ export const TitleContainer = styled.div`
     }
   }
 `;
-export const LineDecoration = styled.div`
+export const LineDecoration = styled(motion.div)`
     width: 52vw;
     height: 1px;
     position: absolute;

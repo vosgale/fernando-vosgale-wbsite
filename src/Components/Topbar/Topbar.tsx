@@ -20,7 +20,6 @@ export const Topbar = ({ setTheme }: { setTheme: () => void }) => {
   }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menu = ["Sobre", "Experiência", "Projetos", "Repositórios"];
-  console.log(setTheme);
   const motionConfig = {
     MenuInitial: {
       transform: "translateY(-20px)",
@@ -48,9 +47,10 @@ export const Topbar = ({ setTheme }: { setTheme: () => void }) => {
         src={IMAGES.logo}
       />
       <DesktopMenu>
-        {/* <button onClick={() => setTheme()}>Dark</button> */}
+        <button onClick={() => setTheme()}>Dark</button>
         {menu.map((item, index) => (
           <motion.li
+            key={item}
             variants={motionConfig}
             initial="MenuInitial"
             animate="MenuAnimate"
@@ -89,6 +89,7 @@ export const Topbar = ({ setTheme }: { setTheme: () => void }) => {
             >
               {menu.map((item) => (
                 <motion.li
+                  key={item}
                   initial={{
                     opacity: 0,
                     transform: "translateY(30px)",

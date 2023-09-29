@@ -10,7 +10,7 @@ import {
 } from "./styles";
 import { useAnimation } from "framer-motion";
 import IMAGES from "../../Images";
-import {  Text } from "../../styles/styled-utils";
+import { Text } from "../../styles/styled-utils";
 import AnimatedContainer from "../../Components/AnimatedContainer";
 export const Experience = () => {
   const [active, setActive] = useState(0);
@@ -68,6 +68,7 @@ export const Experience = () => {
         <ButtonsContainer id="scrol">
           {experienceOptions.map((item, index) => (
             <ButtonOption
+              key={item.name}
               onClick={() => handleClickScroll(index)}
               active={index === active}
               id={String(active)}
