@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const TopbarContainer = styled.div`
   width: 100%;
   height: 80px;
-  /* position: absolute; */
   display: flex;
   align-items: center;
   z-index: 40;
@@ -21,13 +20,25 @@ export const TopbarContainer = styled.div`
     }
   }
 `;
-
+export const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .themeContainer {
+    @media (max-width: 800px) {
+      display: none;
+    }
+    display: flex;
+  }
+`;
 export const DesktopMenu = styled.ul`
   display: flex;
   text-transform: uppercase;
   gap: 30px;
   letter-spacing: 3px;
+  align-items: center;
   list-style-type: none;
+  color: ${(props) => props.theme.colors.primary};
   a {
     font-size: clamp(8px, 0.7vw, 12px);
     transition: 0.5s ease;
@@ -42,11 +53,45 @@ export const DesktopMenu = styled.ul`
   }
 `;
 
+export const ThemeButton = styled.button<{ active: boolean }>`
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  overflow: visible;
+  opacity: ${(props) => (props.active ? 1 : 0.4)};
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: 0.5s ease;
+    path {
+      stroke: ${(props) => props.theme.colors.primary};
+      transition: 0.5s ease;
+      fill: ${(props) =>
+        props.active ? props.theme.colors.primary : "transparent"};
+    }
+  }
+  &:hover {
+    opacity: 1;
+    svg {
+      path {
+        fill: ${(props) => props.theme.colors.primary};
+      }
+      transform: scale(1.2);
+    }
+  }
+`;
+
 export const MobileMenu = styled.div`
   @media (min-width: 800px) {
     display: none;
   }
   display: flex;
+  .themeContainer {
+    display: flex;
+  }
   .menu-container {
     position: fixed;
     height: 100vh;
@@ -72,5 +117,6 @@ export const MobileMenu = styled.div`
   }
   .hamburger-react {
     z-index: 50;
+    color: ${(props) => props.theme.colors.primary};
   }
 `;

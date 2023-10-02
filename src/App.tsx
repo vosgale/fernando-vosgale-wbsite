@@ -34,7 +34,7 @@ function App() {
       <SplashScreen isLoading={isLoading} />
       {!isLoading && (
         <MainContainer>
-          <Topbar setTheme={handleChangeTheme} />
+          <Topbar darkTheme={darkTheme} setTheme={handleChangeTheme} />
           <GeneralInfosContainer>
             <Introduction />
             <Aboutme />

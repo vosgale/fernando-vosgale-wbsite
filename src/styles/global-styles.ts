@@ -33,18 +33,14 @@ body{
   background-size: 400% 400%;
   background-color: ${(props) => props.theme.colors.background};
   background-image: ${(props) => props.theme.colors.backgroundGradient};
-  color: #FFFFFF;
+  color: ${(props) => props.theme.colors.primary};
   font-family: 'Roboto';
   position: relative;
   animation: ${backgroundAnimation} 30s ease-in-out infinite;
   @media (max-width: 500px) {
     background-size: 300% 150%;
     animation: ${backgroundAnimation} 15s ease infinite;
-    background-image: linear-gradient(
-      278deg,
-      rgb(1, 1, 1) 20.38%,
-      rgba(21, 21, 21, 0.8) 74.15%
-    );
+
   }
  
 

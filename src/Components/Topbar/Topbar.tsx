@@ -1,11 +1,25 @@
-import { DesktopMenu, MobileMenu, TopbarContainer } from "./styles";
+import {
+  DesktopMenu,
+  IconContainer,
+  MobileMenu,
+  ThemeButton,
+  TopbarContainer,
+} from "./styles";
 import { Divide as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import IMAGES from "../../Images";
 import useScrollDirection from "../../hooks/useScrollDirection";
+import { DarkIcon } from "../../Images/dark-icon";
+import { LightIcon } from "../../Images/light-icon";
 
-export const Topbar = ({ setTheme }: { setTheme: () => void }) => {
+export const Topbar = ({
+  setTheme,
+  darkTheme,
+}: {
+  setTheme: () => void;
+  darkTheme: boolean;
+}) => {
   const scrollDirection = useScrollDirection("down");
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const handleScroll = () => {
@@ -40,14 +54,24 @@ export const Topbar = ({ setTheme }: { setTheme: () => void }) => {
         backdropFilter: scrolledToTop ? "none" : "blur(10px)",
       }}
     >
-      <motion.img
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ type: "tween", duration: 2 }}
-        src={IMAGES.logo}
-      />
+      <IconContainer>
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ type: "tween", duration: 2 }}
+          src={IMAGES.logo}
+        />
+        <div className="themeContainer">
+          <ThemeButton active={darkTheme} onClick={() => setTheme()}>
+            <DarkIcon />
+          </ThemeButton>
+          <ThemeButton active={!darkTheme} onClick={() => setTheme()}>
+            <LightIcon />
+          </ThemeButton>
+        </div>
+      </IconContainer>
+
       <DesktopMenu>
-        <button onClick={() => setTheme()}>Dark</button>
         {menu.map((item, index) => (
           <motion.li
             key={item}
@@ -87,26 +111,36 @@ export const Topbar = ({ setTheme }: { setTheme: () => void }) => {
               transition={{ duration: 0.4, type: "tween" }}
               className="menu-container"
             >
-              {menu.map((item) => (
-                <motion.li
-                  key={item}
-                  initial={{
-                    opacity: 0,
-                    transform: "translateY(30px)",
-                  }}
-                  animate={{
-                    opacity: 1,
-                    transform: "translateY(0)",
-                  }}
-                  exit={{
-                    opacity: 0,
-                    transform: "translateY(30px)",
-                  }}
-                  transition={{ duration: 0.8, type: "tween" }}
-                >
-                  <a>{item}</a>
-                </motion.li>
-              ))}
+              <>
+                {menu.map((item) => (
+                  <motion.li
+                    key={item}
+                    initial={{
+                      opacity: 0,
+                      transform: "translateY(30px)",
+                    }}
+                    animate={{
+                      opacity: 1,
+                      transform: "translateY(0)",
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transform: "translateY(30px)",
+                    }}
+                    transition={{ duration: 0.8, type: "tween" }}
+                  >
+                    <a>{item}</a>
+                  </motion.li>
+                ))}
+                <div className="themeContainer">
+                  <ThemeButton active={darkTheme} onClick={() => setTheme()}>
+                    <DarkIcon />
+                  </ThemeButton>
+                  <ThemeButton active={!darkTheme} onClick={() => setTheme()}>
+                    <LightIcon />
+                  </ThemeButton>
+                </div>
+              </>
             </motion.ul>
           )}
         </AnimatePresence>

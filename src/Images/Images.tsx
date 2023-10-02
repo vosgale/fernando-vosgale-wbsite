@@ -20,4 +20,6 @@ export const IMAGES = {
   design: new URL("./design.svg", import.meta.url).href,
   experience: new URL("./experience.svg", import.meta.url).href,
   code: new URL("./code.svg", import.meta.url).href,
+  darkIcon: new URL("./dark-icon.svg", import.meta.url).href,
+  lightIcon: new URL("./light-icon.svg", import.meta.url).href,
 };

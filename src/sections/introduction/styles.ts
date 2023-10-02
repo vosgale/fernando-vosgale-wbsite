@@ -7,8 +7,8 @@ export const TitleContainer = styled.div`
   width: fit-content;
   color: ${(props) => props.theme.colors.primary};
   .hello {
-    font-size: clamp(14px, 0.8vw, 22px);;
-    font-weight: 100;
+    font-size: clamp(14px, 0.8vw, 22px);
+    color: ${(props) => props.theme.colors.primary};
   }
   .introduction-description {
     margin-top: 20px;
@@ -35,10 +35,11 @@ export const TitleContainer = styled.div`
   }
 `;
 export const LineDecoration = styled(motion.div)`
-    width: 52vw;
-    height: 1px;
-    position: absolute;
-    bottom: 12vh;
-    right: -16vw;
-    background-image: linear-gradient(290deg, white, transparent);
+  width: 52vw;
+  height: 1.6px;
+  position: absolute;
+  bottom: 12vh;
+  right: -16vw;
+  background-image: ${(props) =>
+    `linear-gradient(290deg, ${props.theme.colors.primary}, transparent)`};
 `;
