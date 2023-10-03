@@ -12,6 +12,7 @@ import { useAnimation } from "framer-motion";
 import IMAGES from "../../Images";
 import { Text } from "../../styles/styled-utils";
 import AnimatedContainer from "../../Components/AnimatedContainer";
+
 export const Experience = () => {
   const [active, setActive] = useState(0);
   const experienceOptions = [
@@ -20,7 +21,7 @@ export const Experience = () => {
       description: `Significant contributions to the management system of ClubPetro, a company responsible for accelerating
        results in more than 1,200 gas stations in Brazil.A complete administrative system that handles all flows of registration
        and management of users, posts, programs and faithfulness.`,
-      logo: IMAGES.clubpetro,
+      logo: undefined,
       duration: {
         start: "Abril, 2022",
         end: "Atualmente",
@@ -40,7 +41,7 @@ export const Experience = () => {
     {
       name: "Skolen",
       description: `Morbi pharetra malesuada mi vel laoreet. Proin fermentum nisl at sapien interdum, eu volutpat ligula lacinia. Sed viverra auctor augue id scelerisque. In convallis mauris vitae risus efficitur iaculis. Nullam nibh ligula, commodo ac elit in, facilisis bibendum quam. In pellentesque imperdiet ex, ac hendrerit justo blandit.`,
-      logo: IMAGES.skolen,
+      logo: undefined,
       duration: {
         start: "Fevereiro, 2021",
         end: "Dezembro, 2022",
@@ -80,12 +81,9 @@ export const Experience = () => {
 
         <InfosContainer>
           <TextContainer animate={controls} transition={{ duration: 1.2 }}>
-            {!experienceOptions[active].logo ? (
-              <h3>{experienceOptions[active].name}</h3>
-            ) : (
-              <img src={experienceOptions[active].logo}></img>
-            )}
+            <h3>{experienceOptions[active].name}</h3>
             <Text>{experienceOptions[active].description}</Text>
+
             <ExperienceDateContainer
               animate={controls}
               transition={{ duration: 1.1, delay: 0.2 }}

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Styledh2 = styled(motion.h2)<{ alignEnd?: boolean }>`
   color: ${(props) => props.theme.colors.secondary};
   font-size: clamp(18px, 2vw, 30px);
-  font-weight: 100;
+  font-weight: normal;
   span {
     color: ${(props) => props.theme.colors.primary};
   }
@@ -19,8 +19,9 @@ export const Styledh2 = styled(motion.h2)<{ alignEnd?: boolean }>`
     content: "";
     display: block;
     width: clamp(100px, 27vw, 400px);
-    height: 1px;
-    background-image: linear-gradient(45deg, #ffffff00, #ffeeee);
+    height: 1.3px;
+    background-image: ${(props) =>
+      `linear-gradient(280deg, #ffffff00, ${props.theme.colors.primary})`};
   }
   @media (max-width: 600px) {
     letter-spacing: 5px;

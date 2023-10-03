@@ -29,6 +29,7 @@ select,
 a {
     -webkit-tap-highlight-color: transparent;
 }
+
 body{
   background-size: 400% 400%;
   background-color: ${(props) => props.theme.colors.background};

@@ -25,28 +25,33 @@ export const ButtonOption = styled.div<{ active?: boolean }>`
   letter-spacing: 4px;
   text-transform: uppercase;
   border-right: ${(props) =>
-    props.active ? "thin solid #393939" : "thin solid rgb(53 53 53 / 34%)"};
+    `thin solid ${props.active ? props.theme.colors.primary : "transparent"}`};
   padding: 15px;
   color: ${(props) => props.theme.colors.primary};
   display: flex;
   align-items: center;
-  font-weight: 100;
   white-space: nowrap;
-  background-color: ${(props) => (props.active ? "#3939394f" : "transparent")};
+  background-color: ${(props) =>
+    props.active ? `${props.theme.colors.backgroundVariant}` : "transparent"};
   cursor: pointer;
   transition: 0.5s ease;
   font-size: 14px;
   &:hover {
-    border-right: thin solid #393939;
+    border-right: thin solid ${(props) => props.theme.colors.primary};
   }
   @media (max-width: 800px) {
     border-right: none;
     border-bottom: ${(props) =>
-      props.active ? "thin solid #393939" : "thin solid rgb(53 53 53 / 34%)"};
+      `thin solid ${
+        props.active
+          ? props.theme.colors.backgroundVariant
+          : "rgb(53 53 53 / 34%)"
+      }`};
 
     &:hover {
       border-right: none;
-      border-bottom: thin solid #393939;
+      border-bottom: thin solid
+        ${(props) => props.theme.colors.backgroundVariant};
     }
   }
 `;
@@ -55,19 +60,23 @@ export const InfosContainer = styled.div`
   display: flex;
   align-items: center;
   max-width: 600px;
-  border-left: thin solid #282727;
+  border-left: thin solid ${(props) => props.theme.colors.backgroundVariant};
   padding-left: 30px;
   overflow: hidden;
   @media (max-width: 800px) {
-    padding-left:30px;
+    padding-left: 30px;
     margin-top: 20px;
     margin-left: 8px;
   }
 `;
 
 export const TextContainer = styled(motion.div)`
-  img {
+  svg {
     width: 200px;
+    height: auto;
+    path {
+      fill: ${(props) => props.theme.colors.primaryVariant};
+    }
   }
   h3 {
     text-transform: uppercase;
