@@ -4,6 +4,7 @@ export default {
     background: "#FFF",
     primary: "#1F1E1E",
     secondary: "#333333",
+    topBarBackground: "#e1e0e059",
     backgroundVariant: "#d2d2d24f",
     primaryVariant: "#000",
     backgroundGradient:

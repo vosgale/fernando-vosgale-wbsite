@@ -11,6 +11,7 @@ import {
 } from "./styles";
 import { useAnimation, motion } from "framer-motion";
 import AnimatedContainer from "../../Components/AnimatedContainer";
+import { LeftIcon, RightIcon } from "./Icons";
 
 export const Repositories = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -52,6 +53,15 @@ export const Repositories = () => {
       <Title number={4} text="Repositórios" />
       <RepositoriesContainer>
         <CarouselDescription>
+          <motion.h3
+            animate={controls}
+            transition={{ duration: 1.2, delay: 0.1 }}
+          >
+            {repositories[activeItem].title}
+          </motion.h3>
+          <Text animate={controls} transition={{ duration: 1.2, delay: 0.2 }}>
+            {repositories[activeItem].description}
+          </Text>
           <CarouselButtonsContainer>
             {repositories.map((_item, index) => (
               <CarouselButton
@@ -68,7 +78,7 @@ export const Repositories = () => {
               }
               className="directionButton"
             >
-              <img src={IMAGES.left} />
+              <LeftIcon />
             </button>
             <button
               className="directionButton"
@@ -78,20 +88,11 @@ export const Repositories = () => {
                   : setActiveItem(0)
               }
             >
-              <img src={IMAGES.right} />
+              <RightIcon />
             </button>
           </CarouselButtonsContainer>
-
-          <motion.h3
-            animate={controls}
-            transition={{ duration: 1.2, delay: 0.1 }}
-          >
-            {repositories[activeItem].title}
-          </motion.h3>
-          <Text animate={controls} transition={{ duration: 1.2, delay: 0.2 }}>
-            {repositories[activeItem].description}
-          </Text>
         </CarouselDescription>
+
         <CarouselImages>
           <motion.img
             animate={controls}

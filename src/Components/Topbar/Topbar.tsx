@@ -15,15 +15,15 @@ import { LightIcon } from "../../Images/light-icon";
 
 export const Topbar = ({
   setTheme,
-  darkTheme,
+  theme,
 }: {
-  setTheme: () => void;
-  darkTheme: boolean;
+  setTheme: (theme: "dark" | "light") => void;
+  theme: "dark" | "light";
 }) => {
   const scrollDirection = useScrollDirection("down");
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 50);
+    setScrolledToTop(window.scrollY < 50);
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -50,7 +50,11 @@ export const Topbar = ({
       style={{
         transform:
           scrollDirection === "down" ? "translateY(-80px)" : "translateY(0px)",
-        backgroundColor: scrolledToTop ? "transparent" : "#10101059",
+        backgroundColor: scrolledToTop
+          ? "transparent"
+          : theme === "dark"
+          ? "#10101059"
+          : "#e1e0e059",
         backdropFilter: scrolledToTop ? "none" : "blur(10px)",
       }}
     >
@@ -62,10 +66,16 @@ export const Topbar = ({
           src={IMAGES.logo}
         />
         <div className="themeContainer">
-          <ThemeButton active={darkTheme} onClick={() => setTheme()}>
+          <ThemeButton
+            active={theme === "dark"}
+            onClick={() => setTheme("dark")}
+          >
             <DarkIcon />
           </ThemeButton>
-          <ThemeButton active={!darkTheme} onClick={() => setTheme()}>
+          <ThemeButton
+            active={theme === "light"}
+            onClick={() => setTheme("light")}
+          >
             <LightIcon />
           </ThemeButton>
         </div>
@@ -133,10 +143,16 @@ export const Topbar = ({
                   </motion.li>
                 ))}
                 <div className="themeContainer">
-                  <ThemeButton active={darkTheme} onClick={() => setTheme()}>
+                  <ThemeButton
+                    active={theme === "dark"}
+                    onClick={() => setTheme("dark")}
+                  >
                     <DarkIcon />
                   </ThemeButton>
-                  <ThemeButton active={!darkTheme} onClick={() => setTheme()}>
+                  <ThemeButton
+                    active={theme === "light"}
+                    onClick={() => setTheme("light")}
+                  >
                     <LightIcon />
                   </ThemeButton>
                 </div>

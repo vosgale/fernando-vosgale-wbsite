@@ -16,9 +16,8 @@ export const SkillCard = styled(motion.div)`
   gap: 30px;
   padding: 20px 30px;
   min-height: 450px;
-  border-bottom: 1px solid #ffffff2e;
+  border-bottom: 1px solid ${(props) => props.theme.colors.secondary};
   justify-content: center;
-  background-image: linear-gradient(357deg, #0f0f0ffc, transparent);
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
     background-image: none;

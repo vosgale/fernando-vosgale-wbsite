@@ -32,15 +32,12 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
     bottom: 20px;
     transition: 0.5s ease;
     width: 45%;
-
     margin-bottom: 40px;
     text-align: ${(props) => (props.direction === "right" ? "end" : "start")};
-    img {
-      width: 100px;
-    }
+
     .itemTitle {
       margin-bottom: 10px;
-      color: white;
+      color: ${(props) => props.theme.colors.primary};
       text-align: end;
       font-weight: 400;
       letter-spacing: 5px;
@@ -58,15 +55,17 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
         props.direction === "right" ? "end" : "start"};
       align-items: center;
       margin-top: 20px;
-      img {
+      svg {
         width: 35px;
+        path {
+          fill: ${(props) => props.theme.colors.primary};
+        }
       }
     }
   }
   @media (max-width: 800px) {
     height: 400px;
-    border: thin solid ${(props) => props.theme.colors.secondary};
-    border-radius: 18px;
+
     .itemImage {
       width: 100%;
       height: 100%;
@@ -79,7 +78,8 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
       bottom: 0;
       width: 100%;
       height: 100%;
-      background-color: #000000e6;
+      background-color: ${(props) => props.theme.colors.background};
+      opacity: 0.8;
       justify-content: center;
     }
     .item-technologies {

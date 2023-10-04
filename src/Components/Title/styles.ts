@@ -7,6 +7,13 @@ export const Styledh2 = styled(motion.h2)<{ alignEnd?: boolean }>`
   font-weight: normal;
   span {
     color: ${(props) => props.theme.colors.primary};
+    position: absolute;
+    font-size: 100px;
+    top: -50px;
+    font-weight: bold;
+    opacity: 0.3;
+    z-index: 1;
+    left: -10px;
   }
   letter-spacing: 5px;
   display: flex;

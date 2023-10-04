@@ -18,23 +18,24 @@ import Skills from "./sections/skills";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [theme, setDarkTheme] = useState<"dark" | "light">("dark");
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 4000);
   }, []);
-  const handleChangeTheme = () => {
-    setDarkTheme(!darkTheme);
+
+  const handleChangeTheme = (theme: "light" | "dark") => {
+    setDarkTheme(theme);
   };
 
   return (
-    <ThemeProvider theme={darkTheme ? dark : light}>
+    <ThemeProvider theme={theme === "dark" ? dark : light}>
       <GlobalStyles />
       <SplashScreen isLoading={isLoading} />
       {!isLoading && (
         <MainContainer>
-          <Topbar darkTheme={darkTheme} setTheme={handleChangeTheme} />
+          <Topbar theme={theme} setTheme={handleChangeTheme} />
           <GeneralInfosContainer>
             <Introduction />
             <Aboutme />

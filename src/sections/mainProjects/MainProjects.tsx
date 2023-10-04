@@ -2,6 +2,7 @@ import AnimatedContainer from "../../Components/AnimatedContainer";
 import Title from "../../Components/Title";
 import IMAGES from "../../Images";
 import { Text } from "../../styles/styled-utils";
+import { MUIIcon, ReactIcon, TSIcon } from "./Icons";
 import { ProjectItem, ProjectsContainer } from "./styles";
 
 export const MainProjects = () => {
@@ -43,7 +44,7 @@ export const MainProjects = () => {
         <ProjectsContainer>
           {Projects.map((project, index) => (
             <ProjectItem
-            key={project.name}
+              key={project.name}
               initial={{ opacity: 0, transform: "translateY(10px)" }}
               whileInView={{ opacity: 1, transform: "translateY(0)" }}
               transition={{ duration: 1.5 }}
@@ -56,9 +57,9 @@ export const MainProjects = () => {
                   <Text>{project.description}</Text>
                 </div>
                 <div className="item-technologies">
-                  <img src={IMAGES.materialUi}></img>
-                  <img src={IMAGES.ts}></img>
-                  <img src={IMAGES.react}></img>
+                  <MUIIcon />
+                  <ReactIcon />
+                  <TSIcon />
                 </div>
               </div>
             </ProjectItem>
