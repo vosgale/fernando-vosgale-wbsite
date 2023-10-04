@@ -15,7 +15,7 @@ export const Styledh2 = styled(motion.h2)<{ alignEnd?: boolean }>`
     z-index: 1;
     left: -10px;
   }
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   display: flex;
   align-items: center;
   position: relative;
@@ -29,8 +29,5 @@ export const Styledh2 = styled(motion.h2)<{ alignEnd?: boolean }>`
     height: 1.3px;
     background-image: ${(props) =>
       `linear-gradient(280deg, #ffffff00, ${props.theme.colors.primary})`};
-  }
-  @media (max-width: 600px) {
-    letter-spacing: 5px;
   }
 `;

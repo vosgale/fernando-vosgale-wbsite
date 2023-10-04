@@ -30,7 +30,7 @@ export const Introduction = () => {
       <TitleContainer>
         <motion.p
           initial="initial"
-          animate="animate"
+          whileInView="animate"
           variants={variants}
           transition={{ delay: 1.2, duration: 1.5 }}
           className="hello"
@@ -39,7 +39,7 @@ export const Introduction = () => {
         </motion.p>
         <motion.h3
           initial="initial"
-          animate="animate"
+          whileInView="animate"
           variants={variants}
           transition={{ delay: 1.4, duration: 1.5 }}
         >
@@ -49,9 +49,9 @@ export const Introduction = () => {
         </motion.h3>
         <motion.div
           initial="initial"
-          animate="animate"
+          whileInView="animate"
           variants={variants}
-          transition={{ delay: 2 }}
+          transition={{ delay: 2, duration: 1.5 }}
           className="introduction-descriptionContainer"
         >
           <Text className="introduction-description">
@@ -64,7 +64,7 @@ export const Introduction = () => {
       <LineDecoration
         initial={{ transform: "translateX(100vw)" }}
         animate={{ transform: "translateX(0)" }}
-        transition={{ delay: 2.3, duration: 2.5 }}
+        transition={{ delay: 1.8, duration: 2.5 }}
       />
     </AnimatedContainer>
   );

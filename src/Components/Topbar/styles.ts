@@ -99,6 +99,7 @@ export const MobileMenu = styled.div`
     background: rgb(0 0 0 / 39%);
     left: 0px;
     backdrop-filter: blur(10px);
+    background-color: ${props=> props.theme.colors.background};
     top: 0px;
     list-style-type: none;
     flex-direction: column;

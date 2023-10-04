@@ -18,6 +18,7 @@ export const SkillCard = styled(motion.div)`
   min-height: 450px;
   border-bottom: 1px solid ${(props) => props.theme.colors.secondary};
   justify-content: center;
+  background-color: ${props=> props.theme.colors.backgroundVariant};
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
     background-image: none;
