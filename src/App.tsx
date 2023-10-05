@@ -33,9 +33,9 @@ function App() {
     <ThemeProvider theme={theme === "dark" ? dark : light}>
       <GlobalStyles />
       <SplashScreen isLoading={isLoading} />
+      <Topbar theme={theme} setTheme={handleChangeTheme} />
       {!isLoading && (
         <MainContainer>
-          <Topbar theme={theme} setTheme={handleChangeTheme} />
           <GeneralInfosContainer>
             <Introduction />
             <Aboutme />

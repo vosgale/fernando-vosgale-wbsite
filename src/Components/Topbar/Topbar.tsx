@@ -46,69 +46,70 @@ export const Topbar = ({
   };
 
   return (
-    <TopbarContainer
-      style={{
-        transform:
-          scrollDirection === "down" ? "translateY(-80px)" : "translateY(0px)",
-        backgroundColor: scrolledToTop
-          ? "transparent"
-          : theme === "dark"
-          ? "#10101059"
-          : "#e1e0e059",
-        backdropFilter: scrolledToTop ? "none" : "blur(10px)",
-      }}
-    >
-      <IconContainer>
-        <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: "tween", duration: 2 }}
-          src={IMAGES.logo}
-        />
-        <div className="themeContainer">
-          <ThemeButton
-            active={theme === "dark"}
-            onClick={() => setTheme("dark")}
-          >
-            <DarkIcon />
-          </ThemeButton>
-          <ThemeButton
-            active={theme === "light"}
-            onClick={() => setTheme("light")}
-          >
-            <LightIcon />
-          </ThemeButton>
-        </div>
-      </IconContainer>
+    <>
+      <TopbarContainer
+        style={{
+          transform:
+            scrollDirection === "down"
+              ? "translateY(-80px)"
+              : "translateY(0px)",
+          backgroundColor: scrolledToTop
+            ? "transparent"
+            : theme === "dark"
+            ? "#10101059"
+            : "#e1e0e059",
+          backdropFilter: scrolledToTop ? "none" : "blur(10px)",
+        }}
+      >
+        <IconContainer>
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ type: "tween", duration: 2 }}
+            src={IMAGES.logo}
+          />
+          <div className="themeContainer">
+            <ThemeButton
+              active={theme === "dark"}
+              onClick={() => setTheme("dark")}
+            >
+              <DarkIcon />
+            </ThemeButton>
+            <ThemeButton
+              active={theme === "light"}
+              onClick={() => setTheme("light")}
+            >
+              <LightIcon />
+            </ThemeButton>
+          </div>
+          <Hamburger
+            toggle={() => setMobileMenuOpen(!mobileMenuOpen)}
+            toggled={mobileMenuOpen}
+            size={25}
+            duration={0.8}
+          />
+        </IconContainer>
 
-      <DesktopMenu>
-        {menu.map((item, index) => (
-          <motion.li
-            key={item}
-            variants={motionConfig}
-            initial="MenuInitial"
-            animate="MenuAnimate"
-            transition={{
-              delay: index / 3,
-              duration: "1",
-            }}
-          >
-            <a>
-              {index + 1}.{item}
-            </a>
-          </motion.li>
-        ))}
-      </DesktopMenu>
-
-
-      
+        <DesktopMenu>
+          {menu.map((item, index) => (
+            <motion.li
+              key={item}
+              variants={motionConfig}
+              initial="MenuInitial"
+              animate="MenuAnimate"
+              transition={{
+                delay: index / 3,
+                duration: "1",
+              }}
+            >
+              <a>
+                {index + 1}.{item}
+              </a>
+            </motion.li>
+          ))}
+        </DesktopMenu>
+      </TopbarContainer>
       <MobileMenu>
-        <Hamburger
-          toggle={() => setMobileMenuOpen(!mobileMenuOpen)}
-          toggled={mobileMenuOpen}
-          size={25}
-          duration={0.8}
-        />
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.ul
@@ -164,6 +165,6 @@ export const Topbar = ({
           )}
         </AnimatePresence>
       </MobileMenu>
-    </TopbarContainer>
+    </>
   );
 };

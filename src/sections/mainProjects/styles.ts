@@ -69,8 +69,10 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
     .itemImage {
       width: 100%;
       height: 100%;
+      border-radius: 15px;
     }
     .project-infos {
+      border-radius: 10px;
       padding: 0 20px;
       text-align: start;
       position: absolute;
@@ -78,7 +80,8 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
       bottom: 0;
       width: 100%;
       height: 100%;
-      background-color: ${(props) => props.theme.colors.background};
+      background-color: ${(props) => props.theme.colors.transparentBackground};
+      backdrop-filter: blur(10px);
       opacity: 0.8;
       justify-content: center;
     }

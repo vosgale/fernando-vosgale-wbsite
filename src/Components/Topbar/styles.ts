@@ -25,10 +25,21 @@ export const IconContainer = styled.div`
   align-items: center;
   gap: 20px;
   .themeContainer {
-    @media (max-width: 800px) {
+    display: flex;
+  }
+  .hamburger-react {
+    color: ${(props) => props.theme.colors.primary};
+    display: none;
+  }
+  @media (max-width: 800px) {
+    justify-content: space-between;
+    width: 100%;
+    .themeContainer {
       display: none;
     }
-    display: flex;
+    .hamburger-react {
+      display: flex;
+    }
   }
 `;
 export const DesktopMenu = styled.ul`
@@ -89,17 +100,23 @@ export const MobileMenu = styled.div`
     display: none;
   }
   display: flex;
+
   .themeContainer {
     display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    svg {
+      width: 40px;
+      height: 40px;
+    }
   }
   .menu-container {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background: rgb(0 0 0 / 39%);
     left: 0px;
     backdrop-filter: blur(10px);
-    background-color: ${props=> props.theme.colors.background};
+    background-color: ${(props) => props.theme.colors.transparentBackground};
     top: 0px;
     list-style-type: none;
     flex-direction: column;
@@ -108,16 +125,12 @@ export const MobileMenu = styled.div`
     align-items: center;
     display: flex;
     opacity: 0;
-
+    z-index: 39;
     li {
       font-size: clamp(14px, 5vw, 30px);
       letter-spacing: 8px;
       text-transform: uppercase;
       cursor: pointer;
     }
-  }
-  .hamburger-react {
-    z-index: 50;
-    color: ${(props) => props.theme.colors.primary};
   }
 `;

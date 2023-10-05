@@ -64,7 +64,7 @@ const Skill = ({ title, image, delay, duration, description }: SkillData) => (
 const Skills = () => {
   return (
     <AnimatedContainer autoHeight>
-      <Title alignEnd text="So, I can help you with" />
+      <Title alignEnd text="I can help you with" />
       <SkillCardContainer>
         {skillsData.map((skill, index) => (
           <Skill key={index} {...skill} />
