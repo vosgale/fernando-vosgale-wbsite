@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const SplashScreenContainer = styled(motion.div)`
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background-color: ${(props) => props.theme.colors.background};
   position: fixed;
   z-index: 10000;
   display: flex;

@@ -18,7 +18,14 @@ import Skills from "./sections/skills";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [theme, setDarkTheme] = useState<"dark" | "light">("dark");
+  const savedTheme = window.localStorage.getItem("theme") as
+    | "dark"
+    | "light"
+    | null;
+  const [theme, setDarkTheme] = useState<"dark" | "light">(
+    savedTheme || "dark"
+  );
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -26,6 +33,7 @@ function App() {
   }, []);
 
   const handleChangeTheme = (theme: "light" | "dark") => {
+    window.localStorage.setItem("theme", theme);
     setDarkTheme(theme);
   };
 

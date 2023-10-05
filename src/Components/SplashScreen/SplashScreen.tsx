@@ -9,8 +9,8 @@ export const SplashScreen = ({ isLoading }: { isLoading: boolean }) => {
     },
     Fvisible: {
       pathLength: 1,
-      stroke: "#F8F8F8",
-      fill: "#F8F8F8",
+      stroke: "#B7B6B6",
+      fill: "#B7B6B6",
       transition: {
         duration: "3",
         fill: {
@@ -20,8 +20,8 @@ export const SplashScreen = ({ isLoading }: { isLoading: boolean }) => {
     },
     Vvisible: {
       pathLength: 1,
-      stroke: "#B7B6B6",
-      fill: "#B7B6B6",
+      stroke: "#606060",
+      fill: "#606060",
       transition: {
         duration: "3",
         fill: {
@@ -54,12 +54,10 @@ export const SplashScreen = ({ isLoading }: { isLoading: boolean }) => {
               initial="hidden"
               animate="Fvisible"
               d="M62.9443 0V0.0265328L53.7532 11.5222H15.624V29.4962H39.3851L30.1749 41.0184H15.624V65H0V0H62.9443Z"
-              fill="#F8F8F8"
               fill-opacity="0.7"
             />
             <motion.path
               variants={icon}
-              fill="#B7B6B6"
               d="M93.9999 0.537109L59.7116 64.9996H45.2644L40.6427 56.295L32.7075 41.3595L35.6154 37.7228L41.9648 29.7791L49.7006 44.9646L52.8105 51.0655L67.39 22.836L72.9769 12.0182L78.905 0.537109H93.9999Z"
               initial="hidden"
               animate="Vvisible"

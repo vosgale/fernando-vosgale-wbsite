@@ -63,7 +63,7 @@ export const Experience = () => {
   };
 
   return (
-    <AnimatedContainer>
+    <AnimatedContainer >
       <Title number={2} text="Experiência" />
       <ContentContainer>
         <ButtonsContainer id="scrol">
