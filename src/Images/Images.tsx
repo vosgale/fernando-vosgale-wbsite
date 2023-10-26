@@ -22,4 +22,5 @@ export const IMAGES = {
   code: new URL("./code.svg", import.meta.url).href,
   darkIcon: new URL("./dark-icon.svg", import.meta.url).href,
   lightIcon: new URL("./light-icon.svg", import.meta.url).href,
+  wine: new URL("./wine.svg", import.meta.url).href,
 };

@@ -1,11 +1,12 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const FooterTitle = styled.p`
+export const FooterTitle = styled(motion.p)`
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
-  height: 20vh;
+  height: 14vh;
   gap: 20px;
   img {
     width: 70px;
@@ -30,38 +31,10 @@ export const FooterTitle = styled.p`
   }
 `;
 
-export const ContactButton = styled.button`
-  margin-top: 20px;
-  display: inline-block;
-  background: transparent;
-  color: ${(props) => props.theme.colors.secondary};
-  border-radius: 3px;
-  padding: 10px 32px;
-  text-transform: uppercase;
-  transform: skewX(-10deg);
-  transition: 0.7s ease;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    left: -5px;
-    background: ${(props) => props.theme.colors.secondary};
-    border-radius: 3px;
-    width: 0%;
-    height: 110%;
-    z-index: -1;
-    transition: 0.7s ease;
-  }
-  &:hover {
-    color: ${(props) => props.theme.colors.background} !important;
-    transform: scale(1.05) skewX(-10deg);
-    &::after {
-      opacity: 1;
-      width: 120%;
-    }
-  }
+export const MadeBy = styled(motion.p)`
+  width: 100%;
+  text-align: center;
+  color: gray;
+  font-size: 11px;
+  margin-bottom: 20px;
 `;
