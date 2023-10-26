@@ -1,4 +1,3 @@
-import AnimatedContainer from "../../Components/AnimatedContainer";
 import IMAGES from "../../Images";
 import { FooterTitle, MadeBy } from "./styles";
 
