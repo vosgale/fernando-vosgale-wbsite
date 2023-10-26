@@ -6,10 +6,10 @@ export const FooterTitle = styled(motion.p)`
   width: 100%;
   align-items: center;
   justify-content: center;
-  height: 14vh;
+  height: auto;
   gap: 20px;
   img {
-    width: 70px;
+    width: 60px;
   }
   &::before,
   &::after {
@@ -26,9 +26,6 @@ export const FooterTitle = styled(motion.p)`
   &::after {
     background-image: linear-gradient(270 deg, black, transparent);
   }
-  @media (max-width: 600px) {
-    margin: 10vh 0;
-  }
 `;
 
 export const MadeBy = styled(motion.p)`
@@ -37,4 +34,13 @@ export const MadeBy = styled(motion.p)`
   color: gray;
   font-size: 11px;
   margin-bottom: 20px;
+`;
+
+export const FooterContainer = styled.footer`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+gap: 20px;
 `;
