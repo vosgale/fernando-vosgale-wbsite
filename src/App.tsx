@@ -15,7 +15,7 @@ import MainProjects from "./sections/mainProjects";
 import Repositories from "./sections/repositories";
 import Footer from "./sections/footer";
 import Skills from "./sections/skills";
-
+import './i18n'
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const savedTheme = window.localStorage.getItem("theme") as

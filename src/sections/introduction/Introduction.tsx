@@ -2,6 +2,7 @@ import { Button, Text } from "../../styles/styled-utils";
 import AnimatedContainer from "../../Components/AnimatedContainer";
 import { LineDecoration, TitleContainer } from "./styles";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const Introduction = () => {
   const variants = {
@@ -24,7 +25,7 @@ export const Introduction = () => {
       });
     }
   };
-
+  const { t } = useTranslation('introduction');
   return (
     <AnimatedContainer>
       <TitleContainer>
@@ -35,7 +36,7 @@ export const Introduction = () => {
           transition={{ delay: 1.2, duration: 1.5 }}
           className="hello"
         >
-          Olá! eu sou o
+        {t('hello')}
         </motion.p>
         <motion.h3
           initial="initial"
@@ -55,10 +56,9 @@ export const Introduction = () => {
           className="introduction-descriptionContainer"
         >
           <Text className="introduction-description">
-            Desenvolvedor <b>Front-end</b> especializado em criar e projetar
-            experiências digitais únicas!
+          {t('presentation')}
           </Text>
-          <Button onClick={() => handleClickScroll()}>Ver mais</Button>
+          <Button onClick={() => handleClickScroll()}>{t('button')}</Button>
         </motion.div>
       </TitleContainer>
       <LineDecoration
