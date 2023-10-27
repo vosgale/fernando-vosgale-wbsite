@@ -37,6 +37,7 @@ body{
   color: ${(props) => props.theme.colors.primary};
   font-family: 'Roboto';
   position: relative;
+  box-shadow: ${props=> props.theme.colors.boxShadow};
   animation: ${backgroundAnimation} 30s ease-in-out infinite;
   @media (max-width: 500px) {
     background-size: 300% 150%;

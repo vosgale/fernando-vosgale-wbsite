@@ -29,15 +29,14 @@ export const Introduction = () => {
   return (
     <AnimatedContainer>
       <TitleContainer>
-        <motion.p
+        <Text
           initial="initial"
           whileInView="animate"
           variants={variants}
           transition={{ delay: 1.2, duration: 1.5 }}
-          className="hello"
         >
         {t('hello')}
-        </motion.p>
+        </Text>
         <motion.h3
           initial="initial"
           whileInView="animate"

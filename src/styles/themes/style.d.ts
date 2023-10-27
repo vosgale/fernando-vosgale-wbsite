@@ -9,6 +9,7 @@ declare module "styled-components" {
       secondary: string;
       backgroundVariant: string;
       transparentBackground: string;
+      boxShadow: string;
       primaryVariant: string;
       backgroundGradient: string;
     };

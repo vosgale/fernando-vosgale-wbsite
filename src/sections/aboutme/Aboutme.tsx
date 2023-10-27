@@ -3,6 +3,7 @@ import { AboutText, ContentContainer, ProfileImageContainer } from "./styles";
 import IMAGES from "../../Images";
 import { Text } from "../../styles/styled-utils";
 import AnimatedContainer from "../../Components/AnimatedContainer";
+import { useTranslation } from "react-i18next";
 export const Aboutme = () => {
   const AboutVariants = {
     TextInitial: { opacity: 0 },
@@ -18,9 +19,10 @@ export const Aboutme = () => {
       transition: { duration: 1.5, delay: 0.7 },
     },
   };
+  const { t } = useTranslation('aboutme');
   return (
     <AnimatedContainer>
-      <Title number={1} text="Sobre" />
+      <Title number={1} text={t('title')} />
       <ContentContainer>
         <AboutText
           variants={AboutVariants}
@@ -30,21 +32,13 @@ export const Aboutme = () => {
           id="section-1"
         >
           <Text>
-            I am a software developer specializing in Frontend with a focus on
-            the React/Node ecosystem. I have a degree inSystems Analysis and
-            Development and have three years of professional experience.
+            {t('description1')}
           </Text>
           <Text>
-            I always liked design and technology, which inspired me to become a
-            Frontend developer. The area unites the twothings I like the most
-            and this way programming becomes much more than just a job for me.
+          {t('description2')}
           </Text>
           <Text>
-            The passion I have for design is a great asset as a Frontend
-            developer, because it allows me to keep my work upto date with
-            market trends and user needs, which gives me a great commitment to
-            deliver amazing experiencesfor the people who use the products I
-            develop.
+          {t('description3')}
           </Text>
         </AboutText>
         <ProfileImageContainer
@@ -61,7 +55,7 @@ export const Aboutme = () => {
           <ul>
             <li>
               <img src={IMAGES.hat}></img>{" "}
-              <Text>Análise e Desenvolvimento de Sistemas</Text>
+              <Text>{t('systemAnalisis')}</Text>
             </li>
             <li>
               <img src={IMAGES.spot}></img> <Text>Guarapuava-PR</Text>
