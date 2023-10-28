@@ -12,39 +12,38 @@ import { useAnimation } from "framer-motion";
 import IMAGES from "../../Images";
 import { Text } from "../../styles/styled-utils";
 import AnimatedContainer from "../../Components/AnimatedContainer";
-
+import { useTranslation } from "react-i18next";
 export const Experience = () => {
   const [active, setActive] = useState(0);
+  const { t } = useTranslation('experience');
   const experienceOptions = [
     {
       name: "Clubpetro",
-      description: `Significant contributions to the management system of ClubPetro, a company responsible for accelerating
-       results in more than 1,200 gas stations in Brazil.A complete administrative system that handles all flows of registration
-       and management of users, posts, programs and faithfulness.`,
+      description: t('places.clubpetroDescription'),
       logo: undefined,
       duration: {
-        start: "Abril, 2022",
-        end: "Atualmente",
+        start: `${t('time.months.april')}, 2022`,
+        end: t('time.atTheMoment'),
       },
       ïnfo: "",
     },
     {
-      name: "Lets Grow",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere mauris a sapien suscipit vulputate. Nam quam dui, viverra vitae hendrerit vel, sollicitudin ut enim. Etiam sodales est in dapibus gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`,
+      name: "Lets",
+      description: t('places.letsDescription'),
       logo: undefined,
       duration: {
-        start: "Agosto, 2020",
-        end: "Abril, 2022",
+        start: `${t('time.months.august')}, 2020`,
+        end: `${t('time.months.april')}, 2022`,
       },
       ïnfo: "",
     },
     {
       name: "Skolen",
-      description: `Morbi pharetra malesuada mi vel laoreet. Proin fermentum nisl at sapien interdum, eu volutpat ligula lacinia. Sed viverra auctor augue id scelerisque. In convallis mauris vitae risus efficitur iaculis. Nullam nibh ligula, commodo ac elit in, facilisis bibendum quam. In pellentesque imperdiet ex, ac hendrerit justo blandit.`,
+      description: t('places.skolenDescription'),
       logo: undefined,
       duration: {
-        start: "Fevereiro, 2021",
-        end: "Dezembro, 2022",
+        start: `${t('time.months.february')}, 2021`,
+        end: `${t('time.months.december')}, 2022`,
       },
       ïnfo: "",
     },
@@ -64,7 +63,7 @@ export const Experience = () => {
 
   return (
     <AnimatedContainer >
-      <Title number={2} text="Experiência" />
+      <Title number={2} text={t('title')} />
       <ContentContainer>
         <ButtonsContainer id="scrol">
           {experienceOptions.map((item, index) => (

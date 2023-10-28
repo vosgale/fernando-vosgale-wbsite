@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { introductionTranslate } from '../sections/introduction/i18n';
 import { aboutMeTranslate } from '../sections/aboutme/i18n';
+import { experienceTranslate } from '../sections/experience/i18n';
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -19,11 +20,13 @@ i18n
     resources: {
       ptBR: {
         introduction: introductionTranslate.ptBR,
-        aboutme: aboutMeTranslate.ptBR
+        aboutme: aboutMeTranslate.ptBR,
+        experience: experienceTranslate.ptBR
       },
       en: {
         introduction: introductionTranslate.en,
-        aboutme: aboutMeTranslate.en
+        aboutme: aboutMeTranslate.en,
+        experience: experienceTranslate.en
       },
     },
   });
