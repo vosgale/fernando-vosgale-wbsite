@@ -149,13 +149,13 @@ export const Topbar = ({
                 <div className="themeContainer">
                   <ThemeButton
                     active={theme === "dark"}
-                    onClick={() => setTheme("dark")}
+                    onClick={() =>  {setTheme("dark"); setMobileMenuOpen(false)}}
                   >
                     <DarkIcon />
                   </ThemeButton>
                   <ThemeButton
                     active={theme === "light"}
-                    onClick={() => setTheme("light")}
+                    onClick={() =>  {setTheme("light"); setMobileMenuOpen(false)}}
                   >
                     <LightIcon />
                   </ThemeButton>

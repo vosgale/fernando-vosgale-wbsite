@@ -78,9 +78,18 @@ export const TextContainer = styled(motion.div)`
       fill: ${(props) => props.theme.colors.primaryVariant};
     }
   }
-  h3 {
+  a {
     text-transform: uppercase;
     letter-spacing: 4px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    text-decoration: none;
+    :visited{
+      color: inherit;
+    }
+    &:hover{
+      letter-spacing: 8px;
+    }
   }
   padding-top: 15px;
   display: flex;

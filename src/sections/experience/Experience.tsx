@@ -20,32 +20,30 @@ export const Experience = () => {
     {
       name: "Clubpetro",
       description: t('places.clubpetroDescription'),
-      logo: undefined,
+     
       duration: {
         start: `${t('time.months.april')}, 2022`,
         end: t('time.atTheMoment'),
       },
-      ïnfo: "",
+      link: "https://www.clubpetro.com/",
     },
     {
       name: "Lets",
       description: t('places.letsDescription'),
-      logo: undefined,
       duration: {
         start: `${t('time.months.august')}, 2020`,
         end: `${t('time.months.april')}, 2022`,
       },
-      ïnfo: "",
+      link: "https://www.lets.com.vc/",
     },
     {
       name: "Skolen",
       description: t('places.skolenDescription'),
-      logo: undefined,
       duration: {
         start: `${t('time.months.february')}, 2021`,
         end: `${t('time.months.december')}, 2022`,
       },
-      ïnfo: "",
+      link: "https://skolen.com.br/index.html",
     },
   ];
   const controls = useAnimation();
@@ -80,7 +78,7 @@ export const Experience = () => {
 
         <InfosContainer>
           <TextContainer animate={controls} transition={{ duration: 1.2 }}>
-            <h3>{experienceOptions[active].name}</h3>
+            <a href={experienceOptions[active].link} target="blank">{experienceOptions[active].name}</a>
             <Text>{experienceOptions[active].description}</Text>
 
             <ExperienceDateContainer
