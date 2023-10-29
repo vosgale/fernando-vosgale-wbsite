@@ -1,4 +1,8 @@
 {
-    "title": "Resgatar Paaaaarêmios"
- 
-}
+    "title": "About",
+    "description1": "I am a Frontend software developer with a focus on the React/Node ecosystem. I hold a degree in Analysis and Systems Development and have more than three years of professional experience in real and scalable projects, from concept to code.",
+    "description2": "Before becoming a developer, I had significant exposure to the UI/UX field. Although I don't officially work in that role, I always strive to put that knowledge into practice, adding value to my work and collaborating effectively with design teams.",
+    "description3": "I have worked (and continue to work) on various projects of varying complexity levels. I believe that focus, dedication, and ongoing learning are the essential foundations for a good developer to build their experience.",
+    "systemAnalisis": "Systems Analysis and Development"
+  }
+  

@@ -12,6 +12,7 @@ import IMAGES from "../../Images";
 import useScrollDirection from "../../hooks/useScrollDirection";
 import { DarkIcon } from "../../Images/dark-icon";
 import { LightIcon } from "../../Images/light-icon";
+import { i18n } from '../../i18n';
 
 export const Topbar = ({
   setTheme,
@@ -91,6 +92,8 @@ export const Topbar = ({
         </IconContainer>
 
         <DesktopMenu>
+          <button onClick={()=> i18n.changeLanguage('ptBR')}>PT-BR</button>
+          <button onClick={()=> i18n.changeLanguage('en')}>EN</button>
           {menu.map((item, index) => (
             <motion.li
               key={item}

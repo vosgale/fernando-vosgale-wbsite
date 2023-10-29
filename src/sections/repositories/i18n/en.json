@@ -1,0 +1,12 @@
+{
+    "title": "Repositories",
+    "spiderman": {
+      "title": "Spider-man landing page",
+      "description": "Landing page developed during frontweek, using the Spider-Man: Miles Morales release as a theme. It demonstrates how we can use JavaScript to orchestrate animations and the use of variables in SCSS to expedite the development of styles."
+    },
+    "jsonapi": {
+      "title": "Locations (JSON-API)",
+      "description": "A proof of concept developed with the aim of demonstrating the use of the JSON-API library, enabling the creation of a local API using a JSON file as data storage. Very useful in projects or features that depend on collaboration with backend teams."
+    }
+  }
+  

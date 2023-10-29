@@ -50,7 +50,7 @@ export const DesktopMenu = styled.ul`
   align-items: center;
   list-style-type: none;
   color: ${(props) => props.theme.colors.primary};
-  a {
+  a, button {
     font-size: clamp(8px, 0.7vw, 12px);
     transition: 0.5s ease;
     opacity: 75%;
@@ -58,6 +58,12 @@ export const DesktopMenu = styled.ul`
     &:hover {
       opacity: 100%;
     }
+  }
+  button{
+    background-color: transparent;
+    border: none;
+    color: ${(props) => props.theme.colors.primary}; 
+    font-size: 16px;
   }
   @media (max-width: 800px) {
     display: none;

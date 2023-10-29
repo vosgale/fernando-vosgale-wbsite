@@ -12,21 +12,20 @@ import {
 import { useAnimation, motion } from "framer-motion";
 import AnimatedContainer from "../../Components/AnimatedContainer";
 import { LeftIcon, RightIcon } from "./Icons";
-
+import { useTranslation } from "react-i18next";
 export const Repositories = () => {
+  const {t} = useTranslation('repositories');
   const [activeItem, setActiveItem] = useState(0);
   const repositories = [
     {
-      title: "Spider-man landing page",
-      description:
-        "Landing page desenvolvida durante a frontweek, utilizando o lançamento de Spider-Man: Miles Morales como tema. Demonstra como podemos usar Javascript para orquestrar animações e o uso de variaveis em SCSS para agilizar o desenvolvimento de estilos.",
+      title: t('spiderman.title'),
+      description: t('spiderman.description'),
       image: IMAGES.spiderMan,
       link: "https://github.com/vosgale/Spider-man",
     },
     {
-      title: "JSON-API",
-      description:
-        "Uma POC desenvolvida com o objetivo de demonstrar o uso da lib JSON-API, que possibilita a criação de uma API local, utilizando um arquivo JSON como armazenamento de dados. Muito útil em projetos ou features que dependem de colaboração com times de backend.",
+      title: t('jsonapi.title'),
+      description: t('jsonapi.description'),
       image: IMAGES.places,
       link: "https://github.com/vosgale/Lugares",
     },

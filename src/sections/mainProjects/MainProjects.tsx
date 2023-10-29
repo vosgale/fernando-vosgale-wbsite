@@ -4,31 +4,31 @@ import IMAGES from "../../Images";
 import { Text } from "../../styles/styled-utils";
 import { MUIIcon, ReactIcon, TSIcon, ExpressIcon, NextJsIcon, TailwindIcon } from "./Icons";
 import { ProjectItem, ProjectsContainer } from "./styles";
-
+import { useTranslation } from "react-i18next";
 export const MainProjects = () => {
+  const {t} = useTranslation('mainProjects');
   const Projects = [
     {
       name: "Clubpetro CORE",
-      description: `Sistema de gerenciamento de redes de postos de combustiveis, controle de clientes, analise de dados e muito mais!`,
+      description: t('clubpetro'),
       image: IMAGES.cpscreens, 
      icons: [MUIIcon, ReactIcon, TSIcon],
     },
     {
       name: "Fincheck",
-      description: `O Fincheck, sistema de controle de finanças, foi desenvolvido durante o JSStack, contemplando além do frontend, aprendizados de backend com NodeJS.`,
+      description:t('fincheck'),
       image: IMAGES.fincheck,
       icons: [ReactIcon, TSIcon, ExpressIcon],
     },
     {
       name: "Clapme OTTS",
-      description: `As plataformas Over The Top referem-se a serviços de streaming. O CLAPME OTTS oferece ao cliente uma identidade visual própria, além de funcionalidades propostas pelo cliente como: listas de eventos, contagens regressivas, cadastro de clientes, captação de leads e muito mais!`,
+      description: t('clapme'),
       image: IMAGES.otts,
       icons: [TailwindIcon,ReactIcon, TSIcon, NextJsIcon],
     },
     {
       name: "Skolen",
-      description: `
-      Um ótimo sistema de gestão, que possibilita a gestão completa das escolas oferecendo dados e métricas de engajamento de alunos, professores, turmas, salas e muito mais!`,
+      description: t('skolen'),
       image: IMAGES.skolenScreens,
       icons: [MUIIcon, ReactIcon, TSIcon],
     },

@@ -1,0 +1,15 @@
+{
+  "title": "Posso ajudar com",
+  "design": {
+    "title": "Design",
+    "description": "Tudo começa aqui, os rabiscos no papel, uma ideia tomando forma, conceitos e prototipação, onde a criatividade flui e projeto um vislumbre fiel do que será o trabalho final."
+  },
+  "code": {
+    "title": "Código",
+    "description": "A construção real do que foi projetado, criação dos componentes, estados, gerenciamento minucioso de desempenho buscando um produto final impecável e de fácil manutenção, seja um sistema completo ou apenas uma nova feature."
+  },
+  "experience": {
+    "title": "Experiência",
+    "description": "Uma excelente forma de aprimorar conhecimentos já existentes é ensinando. Busco sempre compartilhar o conhecimento adquirido ao longo dos anos. Ser experiente na área vai muito além de hard skills."
+  }
+}
