@@ -27,4 +27,6 @@ export const IMAGES = {
   fincheck: new URL("./mainProjects/fincheck.png", import.meta.url).href,
   otts: new URL("./mainProjects/otts.png", import.meta.url).href,
   skolenScreens: new URL("./mainProjects/skolen.png", import.meta.url).href,
+  spiderMan: new URL("./repositories/spiderman.png", import.meta.url).href,
+  places: new URL("./repositories/places.png", import.meta.url).href,
 };

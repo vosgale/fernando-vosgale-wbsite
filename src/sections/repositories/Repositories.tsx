@@ -19,23 +19,16 @@ export const Repositories = () => {
     {
       title: "Spider-man landing page",
       description:
-        "Significant contributions to the management system of ClubPetro, a company responsible for accelerating results in more than 1,200 gas stations in Brazil. A complete administrative system that handles all flows of registration and management of users, posts, programs and faithfulness.",
-      image: IMAGES.cpDashboard,
-      link: "",
+        "Landing page desenvolvida durante a frontweek, utilizando o lançamento de Spider-Man: Miles Morales como tema. Demonstra como podemos usar Javascript para orquestrar animações e o uso de variaveis em SCSS para agilizar o desenvolvimento de estilos.",
+      image: IMAGES.spiderMan,
+      link: "https://github.com/vosgale/Spider-man",
     },
     {
-      title: "Json Api",
+      title: "JSON-API",
       description:
-        "Significant contributions to the management system ofof users, posts, programs and faithfulness.",
-      image: IMAGES.cpDashboard,
-      link: "",
-    },
-    {
-      title: "Mifcokoaskd",
-      description:
-        "Significant contributions to the management system ofoaksdokasogistration and management of users, posts, programs and faithfulness.",
-      image: IMAGES.cpDashboard,
-      link: "",
+        "Uma POC desenvolvida com o objetivo de demonstrar o uso da lib JSON-API, que possibilita a criação de uma API local, utilizando um arquivo JSON como armazenamento de dados. Muito útil em projetos ou features que dependem de colaboração com times de backend.",
+      image: IMAGES.places,
+      link: "https://github.com/vosgale/Lugares",
     },
   ];
 
@@ -53,14 +46,17 @@ export const Repositories = () => {
       <Title number={4} text="Repositórios" />
       <RepositoriesContainer>
         <CarouselDescription>
-          <motion.h3
+          <motion.a
             animate={controls}
             transition={{ duration: 1.2, delay: 0.1 }}
+            href={repositories[activeItem].link}
+            target="blank"
           >
             {repositories[activeItem].title}
-          </motion.h3>
+          </motion.a>
           <Text animate={controls} transition={{ duration: 1.2, delay: 0.2 }}>
             {repositories[activeItem].description}
+            <br />
           </Text>
           <CarouselButtonsContainer>
             {repositories.map((_item, index) => (
@@ -94,11 +90,13 @@ export const Repositories = () => {
         </CarouselDescription>
 
         <CarouselImages>
-          <motion.img
-            animate={controls}
-            transition={{ duration: 1.2 }}
-            src={repositories[activeItem].image}
-          ></motion.img>
+          <a href={repositories[activeItem].link} target="blank">
+            <motion.img
+              animate={controls}
+              transition={{ duration: 1.2 }}
+              src={repositories[activeItem].image}
+            ></motion.img>
+          </a>
         </CarouselImages>
       </RepositoriesContainer>
     </AnimatedContainer>
