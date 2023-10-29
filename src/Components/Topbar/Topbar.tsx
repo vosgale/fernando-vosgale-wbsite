@@ -129,6 +129,8 @@ export const Topbar = ({
               className="menu-container"
             >
               <>
+              <button onClick={()=> i18n.changeLanguage('ptBR')}>PT-BR</button>
+          <button onClick={()=> i18n.changeLanguage('en')}>EN</button>
                 {menu.map((item) => (
                   <motion.li
                     key={item}
