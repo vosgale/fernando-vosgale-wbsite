@@ -23,6 +23,7 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
   .itemImage {
     object-fit: cover;
     width: 55%;
+    height: 380px;
     transition: 0.5s ease;
   }
 
@@ -57,6 +58,8 @@ export const ProjectItem = styled(motion.div)<{ direction: string }>`
       margin-top: 20px;
       svg {
         width: 35px;
+        display: flex;
+        object-fit: cover;
         path {
           fill: ${(props) => props.theme.colors.primary};
         }

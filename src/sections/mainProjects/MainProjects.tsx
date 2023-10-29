@@ -2,38 +2,35 @@ import AnimatedContainer from "../../Components/AnimatedContainer";
 import Title from "../../Components/Title";
 import IMAGES from "../../Images";
 import { Text } from "../../styles/styled-utils";
-import { MUIIcon, ReactIcon, TSIcon } from "./Icons";
+import { MUIIcon, ReactIcon, TSIcon, ExpressIcon, NextJsIcon, TailwindIcon } from "./Icons";
 import { ProjectItem, ProjectsContainer } from "./styles";
 
 export const MainProjects = () => {
   const Projects = [
     {
-      name: "Clubpetro",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-    tincidunt eget lectus id luctus. Donec quis mauris sed augue pretium
-    mattis quis ac urna. Maecenas rutrum tortor sapien, sed interdum
-    tortor elementum vitae. Aliquam elementum..`,
+      name: "Clubpetro CORE",
+      description: `Sistema de gerenciamento de redes de postos de combustiveis, controle de clientes, analise de dados e muito mais!`,
+      image: IMAGES.cpscreens, 
+     icons: [MUIIcon, ReactIcon, TSIcon],
     },
     {
-      name: "Clubpetro-2",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-    tincidunt eget lectus id luctus. Donec quis mauris sed augue pretium
-    mattis quis ac urna. Maecenas rutrum tortor sapien, sed interdum
-    tortor elementum vitae. Aliquam elementum..`,
+      name: "Fincheck",
+      description: `O Fincheck, sistema de controle de finanças, foi desenvolvido durante o JSStack, contemplando além do frontend, aprendizados de backend com NodeJS.`,
+      image: IMAGES.fincheck,
+      icons: [ReactIcon, TSIcon, ExpressIcon],
     },
     {
-      name: "Clubpetro-3",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-    tincidunt eget lectus id luctus. Donec quis mauris sed augue pretium
-    mattis quis ac urna. Maecenas rutrum tortor sapien, sed interdum
-    tortor elementum vitae. Aliquam elementum..`,
+      name: "Clapme OTTS",
+      description: `As plataformas Over The Top referem-se a serviços de streaming. O CLAPME OTTS oferece ao cliente uma identidade visual própria, além de funcionalidades propostas pelo cliente como: listas de eventos, contagens regressivas, cadastro de clientes, captação de leads e muito mais!`,
+      image: IMAGES.otts,
+      icons: [TailwindIcon,ReactIcon, TSIcon, NextJsIcon],
     },
     {
-      name: "Clubpetro-4",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-    tincidunt eget lectus id luctus. Donec quis mauris sed augue pretium
-    mattis quis ac urna. Maecenas rutrum tortor sapien, sed interdum
-    tortor elementum vitae. Aliquam elementum..`,
+      name: "Skolen",
+      description: `
+      Um ótimo sistema de gestão, que possibilita a gestão completa das escolas oferecendo dados e métricas de engajamento de alunos, professores, turmas, salas e muito mais!`,
+      image: IMAGES.skolenScreens,
+      icons: [MUIIcon, ReactIcon, TSIcon],
     },
   ];
 
@@ -50,16 +47,16 @@ export const MainProjects = () => {
               transition={{ duration: 1.5 }}
               direction={index % 2 === 0 ? "right" : "left"}
             >
-              <img className="itemImage" src={IMAGES.cpDashboard} />
+              <img className="itemImage" src={project.image} />
               <div className="project-infos">
                 <h2 className="itemTitle">{project.name}</h2>
                 <div className="ItemInfos">
                   <Text>{project.description}</Text>
                 </div>
                 <div className="item-technologies">
-                  <MUIIcon />
-                  <ReactIcon />
-                  <TSIcon />
+                  {project.icons.map((Icon) => (
+                    <Icon />
+                  ))}
                 </div>
               </div>
             </ProjectItem>

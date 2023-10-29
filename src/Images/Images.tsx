@@ -23,4 +23,8 @@ export const IMAGES = {
   darkIcon: new URL("./dark-icon.svg", import.meta.url).href,
   lightIcon: new URL("./light-icon.svg", import.meta.url).href,
   wine: new URL("./wine.svg", import.meta.url).href,
+  cpscreens: new URL("./mainProjects/cpscreens.png", import.meta.url).href,
+  fincheck: new URL("./mainProjects/fincheck.png", import.meta.url).href,
+  otts: new URL("./mainProjects/otts.png", import.meta.url).href,
+  skolenScreens: new URL("./mainProjects/skolen.png", import.meta.url).href,
 };
