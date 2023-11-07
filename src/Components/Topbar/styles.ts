@@ -50,7 +50,7 @@ export const DesktopMenu = styled.ul`
   align-items: center;
   list-style-type: none;
   color: ${(props) => props.theme.colors.primary};
-  a, button {
+  a {
     font-size: clamp(8px, 0.7vw, 12px);
     transition: 0.5s ease;
     opacity: 75%;
@@ -59,12 +59,7 @@ export const DesktopMenu = styled.ul`
       opacity: 100%;
     }
   }
-  button{
-    background-color: transparent;
-    border: none;
-    color: ${(props) => props.theme.colors.primary}; 
-    font-size: 16px;
-  }
+
   @media (max-width: 800px) {
     display: none;
   }
@@ -138,5 +133,30 @@ export const MobileMenu = styled.div`
       text-transform: uppercase;
       cursor: pointer;
     }
+  }
+`;
+
+export const LanguageContainer = styled.div`
+  display: flex;
+`;
+export const LanguageButton = styled.button<{ active: boolean }>`
+  border: none;
+  background: none;
+  color: white;
+  letter-spacing: 3px;
+  opacity: ${(props) => (props.active ? "1" : "75%")};
+  color: ${(props) => props.theme.colors.primary};
+
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: ${(props) => props.active && "thin solid"};
+  font-size: clamp(8px, 0.7vw, 12px);
+  transition: 0.5s ease;
+  &:hover {
+    opacity: 1;
+  }
+  @media(max-width: 800px){
+    border: none;
+    font-size: 18px;
   }
 `;

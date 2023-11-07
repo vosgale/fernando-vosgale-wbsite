@@ -1,6 +1,8 @@
 import {
   DesktopMenu,
   IconContainer,
+  LanguageButton,
+  LanguageContainer,
   MobileMenu,
   ThemeButton,
   TopbarContainer,
@@ -12,7 +14,7 @@ import IMAGES from "../../Images";
 import useScrollDirection from "../../hooks/useScrollDirection";
 import { DarkIcon } from "../../Images/dark-icon";
 import { LightIcon } from "../../Images/light-icon";
-import { i18n } from '../../i18n';
+import { i18n } from "../../i18n";
 
 export const Topbar = ({
   setTheme,
@@ -46,6 +48,8 @@ export const Topbar = ({
     },
   };
 
+  const [language, setLanguage] = useState(i18n.language);
+
   return (
     <>
       <TopbarContainer
@@ -69,6 +73,7 @@ export const Topbar = ({
             transition={{ type: "tween", duration: 2 }}
             src={IMAGES.logo}
           />
+
           <div className="themeContainer">
             <ThemeButton
               active={theme === "dark"}
@@ -82,7 +87,8 @@ export const Topbar = ({
             >
               <LightIcon />
             </ThemeButton>
-          </div>
+          </div> 
+          
           <Hamburger
             toggle={() => setMobileMenuOpen(!mobileMenuOpen)}
             toggled={mobileMenuOpen}
@@ -92,8 +98,26 @@ export const Topbar = ({
         </IconContainer>
 
         <DesktopMenu>
-          <button onClick={()=> i18n.changeLanguage('ptBR')}>PT-BR</button>
-          <button onClick={()=> i18n.changeLanguage('en')}>EN</button>
+        <LanguageContainer>
+            <LanguageButton
+              active={language === "ptBR"}
+              onClick={() => {
+                i18n.changeLanguage("ptBR");
+                setLanguage("ptBR");
+              }}
+            >
+              PT-BR
+            </LanguageButton>
+            <LanguageButton
+              active={language === "en"}
+              onClick={() => {
+                i18n.changeLanguage("en");
+                setLanguage("en");
+              }}
+            >
+              EN
+            </LanguageButton>
+          </LanguageContainer>
           {menu.map((item, index) => (
             <motion.li
               key={item}
@@ -114,6 +138,7 @@ export const Topbar = ({
       </TopbarContainer>
       <MobileMenu>
         <AnimatePresence>
+          
           {mobileMenuOpen && (
             <motion.ul
               initial={{
@@ -129,8 +154,8 @@ export const Topbar = ({
               className="menu-container"
             >
               <>
-              <button onClick={()=> i18n.changeLanguage('ptBR')}>PT-BR</button>
-          <button onClick={()=> i18n.changeLanguage('en')}>EN</button>
+                
+
                 {menu.map((item) => (
                   <motion.li
                     key={item}
@@ -151,16 +176,42 @@ export const Topbar = ({
                     <a>{item}</a>
                   </motion.li>
                 ))}
+                  <LanguageContainer>
+            <LanguageButton
+              active={language === "ptBR"}
+              onClick={() => {
+                i18n.changeLanguage("ptBR");
+                setLanguage("ptBR");
+              }}
+            >
+              PT-BR
+            </LanguageButton>
+            <LanguageButton
+              active={language === "en"}
+              onClick={() => {
+                i18n.changeLanguage("en");
+                setLanguage("en");
+              }}
+            >
+              EN
+            </LanguageButton>
+          </LanguageContainer>
                 <div className="themeContainer">
                   <ThemeButton
                     active={theme === "dark"}
-                    onClick={() =>  {setTheme("dark"); setMobileMenuOpen(false)}}
+                    onClick={() => {
+                      setTheme("dark");
+                      setMobileMenuOpen(false);
+                    }}
                   >
                     <DarkIcon />
                   </ThemeButton>
                   <ThemeButton
                     active={theme === "light"}
-                    onClick={() =>  {setTheme("light"); setMobileMenuOpen(false)}}
+                    onClick={() => {
+                      setTheme("light");
+                      setMobileMenuOpen(false);
+                    }}
                   >
                     <LightIcon />
                   </ThemeButton>
