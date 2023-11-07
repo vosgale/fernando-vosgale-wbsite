@@ -122,11 +122,12 @@ export const MobileMenu = styled.div`
     list-style-type: none;
     flex-direction: column;
     justify-content: center;
-    gap: 10vh;
     align-items: center;
+    padding: 30px;
+    gap: 10vh;
     display: flex;
     opacity: 0;
-    z-index: 39;
+    z-index: 40;
     li {
       font-size: clamp(14px, 5vw, 30px);
       letter-spacing: 8px;
@@ -146,17 +147,23 @@ export const LanguageButton = styled.button<{ active: boolean }>`
   letter-spacing: 3px;
   opacity: ${(props) => (props.active ? "1" : "75%")};
   color: ${(props) => props.theme.colors.primary};
-
   cursor: pointer;
   padding: 10px;
-  border-bottom: ${(props) => props.active && "thin solid"};
   font-size: clamp(8px, 0.7vw, 12px);
   transition: 0.5s ease;
+  transform: scale(1.05) skewX(-10deg);
   &:hover {
     opacity: 1;
   }
-  @media(max-width: 800px){
+  @media (max-width: 800px) {
     border: none;
     font-size: 18px;
   }
+`;
+
+export const MobileMenuFooter = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5vh;
 `;

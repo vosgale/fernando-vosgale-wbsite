@@ -4,6 +4,7 @@ import {
   LanguageButton,
   LanguageContainer,
   MobileMenu,
+  MobileMenuFooter,
   ThemeButton,
   TopbarContainer,
 } from "./styles";
@@ -87,8 +88,8 @@ export const Topbar = ({
             >
               <LightIcon />
             </ThemeButton>
-          </div> 
-          
+          </div>
+
           <Hamburger
             toggle={() => setMobileMenuOpen(!mobileMenuOpen)}
             toggled={mobileMenuOpen}
@@ -98,7 +99,7 @@ export const Topbar = ({
         </IconContainer>
 
         <DesktopMenu>
-        <LanguageContainer>
+          <LanguageContainer>
             <LanguageButton
               active={language === "ptBR"}
               onClick={() => {
@@ -136,88 +137,85 @@ export const Topbar = ({
           ))}
         </DesktopMenu>
       </TopbarContainer>
-      <MobileMenu>
-        <AnimatePresence>
-          
-          {mobileMenuOpen && (
-            <motion.ul
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-              }}
-              transition={{ duration: 0.4, type: "tween" }}
-              className="menu-container"
-            >
-              <>
-                
 
-                {menu.map((item) => (
-                  <motion.li
-                    key={item}
-                    initial={{
-                      opacity: 0,
-                      transform: "translateY(30px)",
-                    }}
-                    animate={{
-                      opacity: 1,
-                      transform: "translateY(0)",
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transform: "translateY(30px)",
-                    }}
-                    transition={{ duration: 0.8, type: "tween" }}
-                  >
-                    <a>{item}</a>
-                  </motion.li>
-                ))}
-                  <LanguageContainer>
-            <LanguageButton
-              active={language === "ptBR"}
-              onClick={() => {
-                i18n.changeLanguage("ptBR");
-                setLanguage("ptBR");
-              }}
-            >
-              PT-BR
-            </LanguageButton>
-            <LanguageButton
-              active={language === "en"}
-              onClick={() => {
-                i18n.changeLanguage("en");
-                setLanguage("en");
-              }}
-            >
-              EN
-            </LanguageButton>
-          </LanguageContainer>
-                <div className="themeContainer">
-                  <ThemeButton
-                    active={theme === "dark"}
-                    onClick={() => {
-                      setTheme("dark");
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    <DarkIcon />
-                  </ThemeButton>
-                  <ThemeButton
-                    active={theme === "light"}
-                    onClick={() => {
-                      setTheme("light");
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    <LightIcon />
-                  </ThemeButton>
-                </div>
-              </>
-            </motion.ul>
+      <MobileMenu onClick={() => setMobileMenuOpen(false)}>
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <>
+              <motion.ul
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
+                transition={{ duration: 0.4, type: "tween" }}
+                className="menu-container"
+              >
+                <>
+           
+
+                  {menu.map((item) => (
+                    <motion.li
+                      key={item}
+                      initial={{
+                        opacity: 0,
+                        transform: "translateY(30px)",
+                      }}
+                      animate={{
+                        opacity: 1,
+                        transform: "translateY(0)",
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transform: "translateY(30px)",
+                      }}
+                      transition={{ duration: 0.8, type: "tween" }}
+                    >
+                      <a>{item}</a>
+                    </motion.li>
+                  ))}
+                  <MobileMenuFooter>
+                    <LanguageButton
+                      active={language === "ptBR"}
+                      onClick={() => {
+                        i18n.changeLanguage("ptBR");
+                        setLanguage("ptBR");
+                      }}
+                    >
+                      PT-BR
+                    </LanguageButton>
+                    <LanguageButton
+                      active={language === "en"}
+                      onClick={() => {
+                        i18n.changeLanguage("en");
+                        setLanguage("en");
+                      }}
+                    >
+                      EN
+                    </LanguageButton>
+                    
+                  </MobileMenuFooter>
+                  <div className="themeContainer">
+                    <ThemeButton
+                      active={theme === "dark"}
+                      onClick={() => setTheme("dark")}
+                    >
+                      <DarkIcon />
+                    </ThemeButton>
+                    <ThemeButton
+                      active={theme === "light"}
+                      onClick={() => setTheme("light")}
+                    >
+                      <LightIcon />
+                    </ThemeButton>
+                  </div>
+                </>
+              </motion.ul>
+            </>
           )}
         </AnimatePresence>
       </MobileMenu>
