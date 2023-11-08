@@ -156,8 +156,20 @@ export const Topbar = ({
                 className="menu-container"
               >
                 <>
-           
-
+                <div className="themeContainer">
+                    <ThemeButton
+                      active={theme === "dark"}
+                      onClick={() => setTheme("dark")}
+                    >
+                      <DarkIcon />
+                    </ThemeButton>
+                    <ThemeButton
+                      active={theme === "light"}
+                      onClick={() => setTheme("light")}
+                    >
+                      <LightIcon />
+                    </ThemeButton>
+                  </div>
                   {menu.map((item) => (
                     <motion.li
                       key={item}
@@ -178,6 +190,7 @@ export const Topbar = ({
                       <a>{item}</a>
                     </motion.li>
                   ))}
+
                   <MobileMenuFooter>
                     <LanguageButton
                       active={language === "ptBR"}
@@ -197,22 +210,7 @@ export const Topbar = ({
                     >
                       EN
                     </LanguageButton>
-                    
                   </MobileMenuFooter>
-                  <div className="themeContainer">
-                    <ThemeButton
-                      active={theme === "dark"}
-                      onClick={() => setTheme("dark")}
-                    >
-                      <DarkIcon />
-                    </ThemeButton>
-                    <ThemeButton
-                      active={theme === "light"}
-                      onClick={() => setTheme("light")}
-                    >
-                      <LightIcon />
-                    </ThemeButton>
-                  </div>
                 </>
               </motion.ul>
             </>
