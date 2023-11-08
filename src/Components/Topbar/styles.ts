@@ -151,7 +151,6 @@ export const LanguageButton = styled.button<{ active: boolean }>`
   padding: 10px;
   font-size: clamp(8px, 0.7vw, 12px);
   transition: 0.5s ease;
-  transform: scale(1.05) skewX(-10deg);
   &:hover {
     opacity: 1;
   }
