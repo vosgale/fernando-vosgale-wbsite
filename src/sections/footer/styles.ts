@@ -18,7 +18,7 @@ export const FooterTitle = styled(motion.p)`
     width: 30%;
     height: 1px;
     opacity: 0.4;
-    background: white;
+    background: ${props=> props.theme.colors.primary};
   }
   &::before {
     background-image: linear-gradient(45deg, black, transparent);

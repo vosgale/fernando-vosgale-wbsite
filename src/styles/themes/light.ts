@@ -8,7 +8,6 @@ export default {
     backgroundVariant: "#d2d2d24f",
     primaryVariant: "#000",
     transparentBackground: "#ffffff",
-    boxShadow: "inset 1px 1px 18px 3px #2e3337",
     backgroundGradient:
       "linear-gradient(300.23deg, #F2F7FD 20.38%, #E8E8E8CC 74.15%)",
   },

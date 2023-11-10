@@ -37,7 +37,6 @@ body{
   color: ${(props) => props.theme.colors.primary};
   font-family: 'Roboto';
   position: relative;
-  box-shadow: ${(props) => props.theme.colors.boxShadow};
   a{
     color: inherit; 
   text-decoration: inherit; 

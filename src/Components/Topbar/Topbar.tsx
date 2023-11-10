@@ -156,21 +156,7 @@ export const Topbar = ({
                 className="menu-container"
               >
                 <>
-                <div className="themeContainer">
-                    <ThemeButton
-                      active={theme === "dark"}
-                      onClick={() => setTheme("dark")}
-                    >
-                      <DarkIcon />
-                    </ThemeButton>
-                    <ThemeButton
-                      active={theme === "light"}
-                      onClick={() => setTheme("light")}
-                    >
-                      <LightIcon />
-                    </ThemeButton>
-                  </div>
-                  {menu.map((item) => (
+                  {menu.map((item, index) => (
                     <motion.li
                       key={item}
                       initial={{
@@ -187,29 +173,45 @@ export const Topbar = ({
                       }}
                       transition={{ duration: 0.8, type: "tween" }}
                     >
-                      <a>{item}</a>
+                      <a> {index+1}.{item}</a>
                     </motion.li>
                   ))}
 
                   <MobileMenuFooter>
-                    <LanguageButton
-                      active={language === "ptBR"}
-                      onClick={() => {
-                        i18n.changeLanguage("ptBR");
-                        setLanguage("ptBR");
-                      }}
-                    >
-                      PT-BR
-                    </LanguageButton>
-                    <LanguageButton
-                      active={language === "en"}
-                      onClick={() => {
-                        i18n.changeLanguage("en");
-                        setLanguage("en");
-                      }}
-                    >
-                      EN
-                    </LanguageButton>
+                    <div className="mobileMenuFooter-item">
+                      <LanguageButton
+                        active={language === "ptBR"}
+                        onClick={() => {
+                          i18n.changeLanguage("ptBR");
+                          setLanguage("ptBR");
+                        }}
+                      >
+                        PT-BR
+                      </LanguageButton>
+                      <LanguageButton
+                        active={language === "en"}
+                        onClick={() => {
+                          i18n.changeLanguage("en");
+                          setLanguage("en");
+                        }}
+                      >
+                        EN
+                      </LanguageButton>
+                    </div>
+                    <div className="mobileMenuFooter-item">
+                      <ThemeButton
+                        active={theme === "dark"}
+                        onClick={() => setTheme("dark")}
+                      >
+                        <DarkIcon />
+                      </ThemeButton>
+                      <ThemeButton
+                        active={theme === "light"}
+                        onClick={() => setTheme("light")}
+                      >
+                        <LightIcon />
+                      </ThemeButton>
+                    </div>
                   </MobileMenuFooter>
                 </>
               </motion.ul>

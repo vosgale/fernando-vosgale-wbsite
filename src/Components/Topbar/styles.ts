@@ -122,7 +122,6 @@ export const MobileMenu = styled.div`
     list-style-type: none;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 30px;
     gap: 10vh;
     display: flex;
@@ -163,6 +162,13 @@ export const LanguageButton = styled.button<{ active: boolean }>`
 export const MobileMenuFooter = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 5vh;
+  flex-direction: column;
+  gap: 1vh;
+  .mobileMenuFooter-item{
+    display: flex;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
