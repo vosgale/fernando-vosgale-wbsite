@@ -17,7 +17,7 @@ export const Introduction = () => {
   };
 
   const handleClickScroll = () => {
-    const element = document.getElementById("section-1");
+    const element = document.getElementById("0");
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",

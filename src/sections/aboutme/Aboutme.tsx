@@ -19,27 +19,21 @@ export const Aboutme = () => {
       transition: { duration: 1.5, delay: 0.7 },
     },
   };
-  const { t } = useTranslation('aboutme');
+  const { t } = useTranslation("aboutme");
   return (
     <AnimatedContainer>
-      <Title number={1} text={t('title')} />
+      <Title number={1} text={t("title")} />
       <ContentContainer>
         <AboutText
           variants={AboutVariants}
           initial="TextInitial"
           viewport={{ once: true }}
           whileInView="TextInView"
-          id="section-1"
+          id="0"
         >
-          <Text>
-            {t('description1')}
-          </Text>
-          <Text>
-          {t('description2')}
-          </Text>
-          <Text>
-          {t('description3')}
-          </Text>
+          <Text>{t("description1")}</Text>
+          <Text>{t("description2")}</Text>
+          <Text>{t("description3")}</Text>
         </AboutText>
         <ProfileImageContainer
           variants={AboutVariants}
@@ -54,8 +48,7 @@ export const Aboutme = () => {
           ></img>
           <ul>
             <li>
-              <img src={IMAGES.hat}></img>{" "}
-              <Text>{t('systemAnalisis')}</Text>
+              <img src={IMAGES.hat}></img> <Text>{t("systemAnalisis")}</Text>
             </li>
             <li>
               <img src={IMAGES.spot}></img> <Text>Guarapuava-PR</Text>

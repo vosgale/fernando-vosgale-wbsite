@@ -16,7 +16,7 @@ import useScrollDirection from "../../hooks/useScrollDirection";
 import { DarkIcon } from "../../Images/dark-icon";
 import { LightIcon } from "../../Images/light-icon";
 import { i18n } from "../../i18n";
-
+import { useTranslation } from "react-i18next";
 export const Topbar = ({
   setTheme,
   theme,
@@ -29,6 +29,16 @@ export const Topbar = ({
   const handleScroll = () => {
     setScrolledToTop(window.scrollY < 50);
   };
+  const { t } = useTranslation("topbar");
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -37,7 +47,7 @@ export const Topbar = ({
     };
   }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const menu = ["Sobre", "Experiência", "Projetos", "Repositórios"];
+  const menu = [t("about"), t("experience"), t("projects"), t("repositories")];
   const motionConfig = {
     MenuInitial: {
       transform: "translateY(-20px)",
@@ -122,6 +132,7 @@ export const Topbar = ({
           {menu.map((item, index) => (
             <motion.li
               key={item}
+              onClick={() => handleScrollTo(String(index))}
               variants={motionConfig}
               initial="MenuInitial"
               animate="MenuAnimate"
@@ -159,6 +170,7 @@ export const Topbar = ({
                   {menu.map((item, index) => (
                     <motion.li
                       key={item}
+                      onClick={() => handleScrollTo(String(index))}
                       initial={{
                         opacity: 0,
                         transform: "translateY(30px)",
@@ -173,7 +185,10 @@ export const Topbar = ({
                       }}
                       transition={{ duration: 0.8, type: "tween" }}
                     >
-                      <a> {index+1}.{item}</a>
+                      <a>
+                        {" "}
+                        {index + 1}.{item}
+                      </a>
                     </motion.li>
                   ))}
 

@@ -1,18 +1,17 @@
 {
-    "title": "Experience",
-    "places": {
-      "clubpetroDescription": "Significant contributions to ClubPetro's management system, a company responsible for accelerating results in over 1,200 fuel stations in Brazil. A comprehensive administrative system that handles all user registration, station management, loyalty programs, and loyalty.",
-      "letsDescription": "Lets is a renowned software factory that has delivered hundreds of successful projects. During my journey here, I had the opportunity to collaborate with various interdisciplinary teams and use a wide range of technologies, always aiming to achieve the highest level of customer satisfaction.",
-      "skolenDescription": "Skolen is a startup with a mission to revolutionize school management. We have a comprehensive system for managing students, classes, teachers, and monitoring engagement and reducing school dropout. I had the privilege of being involved in the development from the beginning, collaborating with a talented interdisciplinary team of programmers and designers."
-    },
-    "time": {
-      "atTheMoment": "Currently",
-      "months": {
-        "april": "April",
-        "august": "August",
-        "february": "February",
-        "december": "December"
-      }
+  "title": "Experience",
+  "places": {
+    "clubpetroDescription": "Significant contributions to the management system of ClubPetro, a company responsible for accelerating results in over 1,200 fuel stations in Brazil. A comprehensive administrative system that handles all registration and user management, station management, programs, and loyalty flows.",
+    "letsDescription": "Lets is a renowned software factory that has delivered hundreds of successful projects. During my journey here, I had the opportunity to collaborate with various multidisciplinary teams and use a wide range of technologies, always aiming for the highest level of quality in executed projects.",
+    "skolenDescription": "Skolen is a startup created with the mission to revolutionize school management. Featuring a comprehensive system for managing students, classes, teachers, and monitoring engagement and reducing school dropout rates. I had the privilege of being involved in the development from the beginning, collaborating with a talented multidisciplinary team of programmers and designers."
+  },
+  "time": {
+    "atTheMoment": "Currently",
+    "months": {
+      "april": "April",
+      "august": "August",
+      "february": "February",
+      "december": "December"
     }
   }
-  
+}

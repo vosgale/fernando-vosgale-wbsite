@@ -15,33 +15,33 @@ import AnimatedContainer from "../../Components/AnimatedContainer";
 import { useTranslation } from "react-i18next";
 export const Experience = () => {
   const [active, setActive] = useState(0);
-  const { t } = useTranslation('experience');
+  const { t } = useTranslation("experience");
   const experienceOptions = [
     {
       name: "Clubpetro",
-      description: t('places.clubpetroDescription'),
-     
+      description: t("places.clubpetroDescription"),
+
       duration: {
-        start: `${t('time.months.april')}, 2022`,
-        end: t('time.atTheMoment'),
+        start: `${t("time.months.april")}, 2022`,
+        end: t("time.atTheMoment"),
       },
       link: "https://www.clubpetro.com/",
     },
     {
       name: "Lets",
-      description: t('places.letsDescription'),
+      description: t("places.letsDescription"),
       duration: {
-        start: `${t('time.months.august')}, 2020`,
-        end: `${t('time.months.april')}, 2022`,
+        start: `${t("time.months.august")}, 2020`,
+        end: `${t("time.months.april")}, 2022`,
       },
       link: "https://www.lets.com.vc/",
     },
     {
       name: "Skolen",
-      description: t('places.skolenDescription'),
+      description: t("places.skolenDescription"),
       duration: {
-        start: `${t('time.months.february')}, 2021`,
-        end: `${t('time.months.december')}, 2022`,
+        start: `${t("time.months.february")}, 2021`,
+        end: `${t("time.months.december")}, 2022`,
       },
       link: "https://skolen.com.br/index.html",
     },
@@ -60,9 +60,9 @@ export const Experience = () => {
   };
 
   return (
-    <AnimatedContainer >
-      <Title number={2} text={t('title')} />
-      <ContentContainer>
+    <AnimatedContainer>
+      <Title number={2} text={t("title")} />
+      <ContentContainer id="1">
         <ButtonsContainer id="scrol">
           {experienceOptions.map((item, index) => (
             <ButtonOption
@@ -78,7 +78,9 @@ export const Experience = () => {
 
         <InfosContainer>
           <TextContainer animate={controls} transition={{ duration: 1.2 }}>
-            <a href={experienceOptions[active].link} target="blank">{experienceOptions[active].name}</a>
+            <a href={experienceOptions[active].link} target="blank">
+              {experienceOptions[active].name}
+            </a>
             <Text>{experienceOptions[active].description}</Text>
 
             <ExperienceDateContainer

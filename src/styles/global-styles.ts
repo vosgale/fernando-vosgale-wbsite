@@ -36,6 +36,7 @@ body{
   background-image: ${(props) => props.theme.colors.backgroundGradient};
   color: ${(props) => props.theme.colors.primary};
   font-family: 'Roboto';
+  scroll-behavior: smooth;
   position: relative;
   a{
     color: inherit; 
