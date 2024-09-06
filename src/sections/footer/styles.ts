@@ -27,13 +27,16 @@ export const FooterTitle = styled(motion.p)`
     background-image: linear-gradient(270 deg, black, transparent);
   }
 `;
-export const ContactInfos = styled.ul`
+export const ContactInfos = styled(motion.ul)`
 width: 100%;
 display: flex;
 justify-content: center;
 gap: 12px;
 opacity: 0.8;
 margin-bottom: 22px;
+.MuiSvgIcon-root{
+  color: ${({theme})=> theme.colors.primary};
+}
 `;
 export const MadeBy = styled(motion.p)`
   width: 100%;

@@ -21,20 +21,24 @@ export const Footer = () => {
       >
         Designed and coded by Fernando Vosgale
       </MadeBy>
-      <ContactInfos>
+      <ContactInfos
+       initial={{ opacity: 0 }}
+       whileInView={{ opacity: 1 }}
+       transition={{ delay: 1.5, duration: 1, ease: "easeIn" }}
+      >
         <Link href="https://w.app/IA7NfU" target="_blank">
           <IconButton>
-            <WhatsAppIcon sx={{ color: "#fff" }} />
+            <WhatsAppIcon  />
           </IconButton>
         </Link>
         <Link href="https://www.linkedin.com/in/fernando-vosgale-968b131b2" target="_blank">
           <IconButton>
-            <LinkedInIcon sx={{ color: "#fff" }} />
+            <LinkedInIcon  />
           </IconButton>
         </Link>
         <Link  href="https://mail.google.com/mail/?view=cm&fs=1&to=vosgale762@gmail.com" target="_blank">
           <IconButton>
-            <EmailIcon sx={{ color: "#fff" }} />
+            <EmailIcon  />
           </IconButton>
         </Link>
       </ContactInfos>
