@@ -27,13 +27,19 @@ export const FooterTitle = styled(motion.p)`
     background-image: linear-gradient(270 deg, black, transparent);
   }
 `;
-
+export const ContactInfos = styled.ul`
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 12px;
+opacity: 0.8;
+margin-bottom: 22px;
+`;
 export const MadeBy = styled(motion.p)`
   width: 100%;
   text-align: center;
   color: gray;
   font-size: 11px;
-  margin-bottom: 20px;
 `;
 
 export const FooterContainer = styled.footer`

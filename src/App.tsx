@@ -28,6 +28,7 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => {
+      // yes, the loading time screen is fake :D
       setIsLoading(false);
     }, 4000);
   }, []);
