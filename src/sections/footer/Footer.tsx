@@ -26,7 +26,7 @@ export const Footer = () => {
        whileInView={{ opacity: 1 }}
        transition={{ delay: 1.5, duration: 1, ease: "easeIn" }}
       >
-        <Link href="https://w.app/IA7NfU" target="_blank">
+        <Link href="https://wa.me/554299842041" target="_blank">
           <IconButton>
             <WhatsAppIcon  />
           </IconButton>
