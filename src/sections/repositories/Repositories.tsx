@@ -42,7 +42,7 @@ export const Repositories = () => {
   }, [activeItem, controls]);
   return (
     <AnimatedContainer>
-      <Title number={4} text="Repositórios" />
+      <Title number={4} text={t('title')} />
       <RepositoriesContainer id="3">
         <CarouselDescription>
           <motion.a

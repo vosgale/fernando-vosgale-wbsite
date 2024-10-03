@@ -43,7 +43,7 @@ export const MainProjects = () => {
 
   return (
     <AnimatedContainer>
-      <Title number={3} text="Projetos" />
+      <Title number={3} text={t('title')} />
       <ProjectsContainer>
         {Projects.map((project, index) => (
           <ProjectItem
