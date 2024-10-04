@@ -3,7 +3,7 @@ export const IMAGES = {
   image1: new URL("./shakespeare.png", import.meta.url).href,
   mobile: new URL("./mobileShakespeare.png", import.meta.url).href,
   logo: new URL("./logo.svg", import.meta.url).href,
-  profile: new URL("./profile.jpg", import.meta.url).href,
+  profile: new URL("./profile.jpeg", import.meta.url).href,
   spot: new URL("./spot.svg", import.meta.url).href,
   hat: new URL("./hat.svg", import.meta.url).href,
   clubpetro: new URL("./clubpetro.svg", import.meta.url).href,
