@@ -47,7 +47,7 @@ export const Topbar = ({
     };
   }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const menu = [t("about"), t("experience"), t("projects"), t("repositories")];
+  const menu = [t("about"), t("experience"), t("projects")];
   const motionConfig = {
     MenuInitial: {
       transform: "translateY(-20px)",
