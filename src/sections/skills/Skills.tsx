@@ -55,7 +55,7 @@ const Skills: React.FC = () => {
   ];
   
   return (
-    <AnimatedContainer autoHeight>
+    <AnimatedContainer >
       <Title alignEnd text={t('title')} />
       <SkillCardContainer>
         {skillsData.map((skill, index) => (

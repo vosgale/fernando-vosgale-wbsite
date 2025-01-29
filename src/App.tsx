@@ -12,7 +12,7 @@ import SplashScreen from "./Components/SplashScreen";
 import { useState, useEffect } from "react";
 import Experience from "./sections/experience";
 import MainProjects from "./sections/mainProjects";
-import Repositories from "./sections/repositories";
+// import Repositories from "./sections/repositories";
 import Footer from "./sections/footer";
 import Skills from "./sections/skills";
 import './i18n'
@@ -50,7 +50,7 @@ function App() {
             <Aboutme />
             <Experience />
             <MainProjects />
-            <Repositories />
+            {/* <Repositories /> */}
             <Skills />
             <Footer />
           </GeneralInfosContainer>

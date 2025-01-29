@@ -48,6 +48,7 @@ export const ProfileImageContainer = styled(motion.div)`
     height: clamp(300px, 20vw, 380px);
     object-fit: cover;
     align-self: center;
+    filter: grayscale(1) brightness(0.8);
     border-radius: 50%;
   }
   ul {
