@@ -16,6 +16,7 @@ import MainProjects from "./sections/mainProjects";
 import Footer from "./sections/footer";
 import Skills from "./sections/skills";
 import './i18n'
+import Repositories from "./sections/repositories";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const savedTheme = window.localStorage.getItem("theme") as
@@ -50,7 +51,7 @@ function App() {
             <Aboutme />
             <Experience />
             <MainProjects />
-            {/* <Repositories /> */}
+            <Repositories />
             <Skills />
             <Footer />
           </GeneralInfosContainer>

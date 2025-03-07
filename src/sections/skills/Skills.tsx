@@ -13,8 +13,13 @@ interface SkillData {
   description: string;
 }
 
-
-const Skill: React.FC<SkillData> = ({ title, image, delay, duration, description }) => (
+const Skill: React.FC<SkillData> = ({
+  title,
+  image,
+  delay,
+  duration,
+  description,
+}) => (
   <SkillCard
     initial={{ opacity: 0, transform: "translateY(80px)" }}
     whileInView={{ opacity: 1, transform: "translateY(0px)" }}
@@ -29,34 +34,34 @@ const Skill: React.FC<SkillData> = ({ title, image, delay, duration, description
 );
 
 const Skills: React.FC = () => {
-  const {t} = useTranslation('skills');
+  const { t } = useTranslation("skills");
   const skillsData: SkillData[] = [
     {
-      title: t('design.title'),
+      title: t("design.title"),
       image: IMAGES.design,
       delay: 0.5,
       duration: 1,
-      description: t('design.description'),
+      description: t("design.description"),
     },
     {
-      title: t('code.title'),
+      title: t("code.title"),
       image: IMAGES.code,
       delay: 0.7,
       duration: 1.2,
-      description: t('code.description'),
+      description: t("code.description"),
     },
     {
-      title: t('experience.title'),
+      title: t("experience.title"),
       image: IMAGES.experience,
       delay: 0.9,
       duration: 1.4,
-      description: t('experience.description'),
+      description: t("experience.description"),
     },
   ];
-  
+
   return (
-    <AnimatedContainer >
-      <Title alignEnd text={t('title')} />
+    <AnimatedContainer autoHeight>
+      <Title alignEnd text={t("title")} />
       <SkillCardContainer>
         {skillsData.map((skill, index) => (
           <Skill key={index} {...skill} />
